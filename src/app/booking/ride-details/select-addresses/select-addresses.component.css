@@ -1,0 +1,406 @@
+/* ::ng-deep .mat-form-field-wrapper {
+    padding-bottom: 1em !important;
+} */
+
+::ng-deep .mat-form-field-infix {
+    border-top: none;
+    align-items: center;
+    /* ABS */
+
+}
+
+::ng-deep .mat-form-field-suffix {
+    top: unset !important;
+}
+
+::ng-deep .mat-card-header-text {
+    margin: 0 !important;
+}
+
+mat-card {
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
+mat-card-header {
+    padding-left: 26px;
+    padding-right: 26px;
+}
+
+mat-card-title {
+    font-weight: 600;
+    font-size: 19px !important;
+}
+
+::ng-deep .mat-form-field-flex {
+    align-items: center !important;
+    line-height: 0.125 !important;
+}
+
+/* @font-face {
+    font-family: 'Material Icons';
+    font-style: normal;
+    font-weight: 400;
+    font-display: block;
+} */
+
+/* mat-card-content {
+    margin-left: -16px;
+    margin-right: -16px;
+} */
+
+#drag-handle {
+    background-color: gray;
+    height: 5px;
+    width: 50px;
+    margin: 0 auto;
+    margin-bottom: 16px;
+    /* margin-top: 10px; */
+}
+
+#ride-details {
+    /* padding-top: 10px; */
+    /* Removed ABS */
+    padding-bottom: 0px;
+}
+
+#dropoff-pickup-connection {
+    width: 16px;
+    margin-top: 1.7em;
+    margin-bottom: 4em;
+    margin-right: 16px;
+}
+
+#dropoff-pickup-connection-line-container {
+    width: 100%;
+    height: 90%;
+    padding-top: 0.3em;
+    padding-bottom: 0.3em;
+}
+
+#dropoff-pickup-connection-line {
+    background-color: #bebfcb;
+    width: 0.1em;
+    height: 100%;
+    margin: 0 auto;
+}
+
+#input-containers {
+    width: 100%;
+    /* calc(80% + 36px); */
+}
+
+.form-field-container {
+    display: flex;
+    align-items: baseline;
+}
+
+.form-field {
+    width: 100%;
+    /* font-size: 1rem; */
+    /* margin-right: 32px; */
+}
+
+#address-form-fields-container {
+    display: flex;
+    flex-direction: column;
+    /* width: calc(80% + 46px);
+    margin: 0 auto; */
+    padding-left: 26px;
+    /* calc(10% - 16px); */
+    padding-right: 26px;
+}
+
+.clear-icon-container {
+    cursor: pointer;
+}
+
+
+.clear-icon {
+    font-family: "Material Icons" !important;
+    font-weight: normal;
+    font-style: normal;
+    font-size: 1rem;
+    background-color: transparent;
+    border-radius: 50%;
+    padding: 6px;
+    transition: all 0.2s linear;
+    will-change: opacity;
+}
+
+.light-theme .clear-icon {
+    color: black;
+}
+
+.dark-theme .clear-icon {
+    color: white;
+}
+
+.clear-icon:hover {
+    background-color: #c6c6c68a;
+}
+
+.spinner-container {
+    width: 30px;
+    height: 20px;
+}
+
+.spinner-container>mat-spinner {
+    margin-left: 8px;
+}
+
+.loader-container {
+    width: 40px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    padding-left: 10px;
+    /* margin-right: -4px; */
+    /* margin-left: 10px; */
+}
+
+.address-suggestion-list {
+    padding-bottom: 1em;
+
+    padding-left: 18px;
+    padding-right: 18px;
+}
+
+.suggestion-container {
+    width: 100%;
+    display: flex;
+    overflow: hidden;
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+    cursor: pointer;
+}
+
+.address-suggestion-list-item {
+    height: auto !important;
+    opacity: 1;
+    transition: opacity 500ms cubic-bezier(0.45, 0, 0.15, 1) 0s;
+    will-change: opacity;
+}
+
+.suggestion-content-container {
+    width: 85%;
+    padding-left: 3%;
+}
+
+/* .address-suggestion-list-item:hover {
+    background-color: #595656;
+} */
+
+.suggestion-title {
+    font-size: 1.2rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.suggestion-detail {
+    font-size: 0.9rem;
+    color: gray;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.suggestion-icon-container {
+    width: 2rem;
+    /* margin-right: 10px; */
+    height: 2rem;
+    align-self: center;
+}
+
+.suggestion-icon {
+    width: 98%;
+    height: 98%;
+    border-radius: 50%;
+    background-image: url("/assets/icons/address-suggestion-icon.png");
+    background-size: 50%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.dropoff {
+    background-color: #f41952;
+}
+
+.dot-container {
+    margin-right: 8px;
+}
+
+.dot {
+    border-radius: 50%;
+    width: 8px;
+    height: 8px;
+    margin: 0 auto;
+    display: block;
+}
+
+.mat-form-field-infix {
+    flex: unset !important;
+}
+
+/* .mat-input-element {
+    width: calc(100% - 20px) !important;
+} */
+
+#ride-details-container {
+    width: 30%;
+    /* margin: 0 auto; */
+    position: fixed;
+    top: 2vh;
+    left: 2vh;
+    height: 85vh;
+}
+
+.apt-input {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.apt-input>label {
+    color: #9a9a9a;
+    font-size: 17px;
+    margin-right: 5px;
+}
+
+.apt-input>input {
+    background-color: transparent;
+    border: 1px solid #9a9a9a;
+    font-size: 15px;
+    border-radius: 5px;
+    color: #9a9a9a;
+    width: 70px;
+    padding: 12.5px 5px;
+}
+
+/* @media screen and (max-width: 900px) {
+    #ride-details-container {
+        width: 100%;
+        margin: 0 auto;
+        position: initial;
+        height: 100vh;
+    }
+
+    #address-form-fields-container {
+        display: flex;
+        width: calc(85% + 32px);
+        margin: 0 auto;
+    }
+} */
+
+/* @media screen and (max-width: 450px) {
+    #ride-details-container {
+        width: 100%;
+        margin: 0 auto;
+        position: initial;
+        height: 100vh;
+    }
+
+    #address-form-fields-container {
+        display: flex;
+        width: calc(85% + 32px);
+        margin: 0 auto;
+    }
+} */
+
+.fadeAnim{
+    animation: fadeCheckMark 2s linear infinite; 
+}
+
+@keyframes fadeCheckMark {
+    0% {
+        opacity: 0;
+        scale: 0;
+    }
+
+    15% {
+        opacity: 1;
+        scale: 1;
+    }
+
+    85% {
+        opacity: 1;
+        scale: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+@media screen and (max-width: 900px) {
+    #ride-details-container {
+        width: 100%;
+        margin: 0 auto;
+        position: initial;
+        height: 100vh;
+    }
+
+    #address-form-fields-container {
+        display: flex;
+        /* width: calc(85% + 48px); */
+        /* ABS */
+        /* margin: 0 auto; */
+        /* ABS */
+    }
+}
+
+@media screen and (max-width: 800px) {
+    #address-form-fields-container {
+        display: flex;
+        /* width: calc(70% + 46px);
+        margin: 0 auto; */
+        /* padding: 0px; */
+        /* width: auto; */
+        /* padding-left: calc(5%); */
+        /* ABS */
+    }
+
+    #dropoff-pickup-connection {
+        width: 8px;
+        margin-top: 1.7em;
+        margin-bottom: 4em;
+        margin-right: 16px;
+    }
+
+    /* #input-containers {
+        width: calc(85% + 16px);
+    } */
+}
+
+@media screen and (max-width: 500px) {
+    #address-form-fields-container {
+        display: flex;
+        /* width: calc(85% + 46px); */
+        /* margin: 0 auto; */
+    }
+
+    .form-field {
+        /* font-size: 1rem; */
+        /* margin-right: 32px; */
+    }
+}
+
+.mylocation-container {
+    cursor: pointer;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 28px;
+    height: 28px;
+
+    transition: all 0.2s linear;
+}
+
+.mylocation-container:hover {
+    background-color: #c6c6c68a;
+}
+
+::ng-deep .mat-form-field-appearance-outline .mat-form-field-flex {
+    padding: 0 8px !important;
+}

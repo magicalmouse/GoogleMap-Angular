@@ -1,0 +1,105 @@
+<mat-card class="mat-elevation-z3" id="ride-details" [ngStyle]='{"box-shadow": isMobile ? "none" : ""}'>
+    <mat-card-header>
+        <mat-card-title>{{ getCardTitle() }}</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+        <div id="address-form-fields-container">
+            <div id="input-containers">
+                <div style="display: flex;justify-content: space-between;align-items: bottom;">
+                    <div class="form-field-container" [ngStyle]="{'width' : aptView ? '80%' : '100%'}">
+                        <mat-form-field appearance="outline" class="form-field">
+                            <div class="dot-container">
+                                <span class="dot pickup"></span>
+                            </div>
+                            <input #pickupAddressInput matInput (focus)="onFocus($event,'pickup')"
+                                (focusout)="onFocusOut($event, 'pickup')" placeholder="Enter a pickup location"
+                                (keyup)="searchAddress($event, 'pickup')" [ngModel]="pickupAddress.title"
+                                autocomplete="off" />
+                            <div>
+                                <mat-spinner [diameter]="15" *ngIf="showLoadingCurrentLocation"></mat-spinner>
+                                <div class="clear-icon-container" aria-label="Clear" (focus)="onFocusClear('pickup')"
+                                    *ngIf="showClearButton('pickup') && !showLoadingCurrentLocation"
+                                    (click)="clearAddress('pickup')">
+                                    <span class="clear-icon">close</span>
+                                </div>
+                                <div class="clear-icon-container" aria-label="Clear"
+                                    *ngIf="!showClearButton('pickup') && !showLoadingCurrentLocation"
+                                    (click)="clickMyCurrentAddress()">
+                                    <span class="clear-icon">my_location</span>
+                                </div>
+                            </div>
+                        </mat-form-field>
+                    </div>
+                    <div *ngIf="aptView" class="form-field-container apt-input" style="width: 18%;text-align: center;">
+                        <mat-form-field appearance="outline" class="form-field" style="padding: 0px;">
+                            <input pickupAddressInput matInput placeholder="Apt #"
+                                style="text-align: center;padding: 0px;" autocomplete="off"
+                                (input)="onchangePickupApt($event)" />
+                        </mat-form-field>
+                    </div>
+                </div>
+
+                <div style="display: flex;justify-content: space-between;align-items: bottom;">
+                    <div class="form-field-container" [ngStyle]="{'width' : aptView ? '80%' : '100%'}">
+                        <mat-form-field appearance="outline" class="form-field">
+                            <div class="dot-container">
+                                <span class="dot dropoff"></span>
+                            </div>
+                            <input #dropoffAddressInput matInput (focus)="onFocus($event, 'dropoff')"
+                                (focusout)="onFocusOut($event, 'dropoff')" placeholder="Enter a drop-off location"
+                                (keyup)="searchAddress($event, 'dropoff')" [ngModel]="dropoffAddress.title"
+                                autocomplete="off" />
+                            <div class="clear-icon-container" matSuffix aria-label="Clear"
+                                *ngIf="showClearButton('dropoff')" (click)="clearAddress('dropoff')">
+                                <span class="clear-icon">close</span>
+                            </div>
+                        </mat-form-field>
+                    </div>
+                    <div *ngIf="aptView" class="form-field-container apt-input" style="width: 18%;text-align: center;">
+                        <mat-form-field appearance="outline" class="form-field">
+                            <input pickupAddressInput matInput placeholder="Apt #" autocomplete="off"
+                                style="text-align: center;" (input)="onchangePickupApt($event)" />
+                        </mat-form-field>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </mat-card-content>
+</mat-card>
+<!-- *ngIf="showAddressSuggestions && addressSuggestions.length > 0" -->
+
+<mat-list class="address-suggestion-list" [ngStyle]="{'padding-bottom' : showAddressSuggestions && addressSuggestions.length > 0 ? '4.5rem' : '1rem'}">
+    <ng-container *ngFor="let suggestion of addressSuggestions">
+        <mat-list-item class="address-suggestion-list-item list-item" *ngIf="suggestion.title !== ''"
+            (click)="setAddress(suggestion)">
+
+            <div class="suggestion-container">
+                <div class="suggestion-icon-container">
+                    <div class="suggestion-icon" [ngClass]="{
+                            pickup: currentField === 'pickup',
+                            dropoff: currentField === 'dropoff'
+                        }"></div>
+                </div>
+                <div class="suggestion-content-container">
+                    <div class="suggestion-title">
+                        {{ suggestion.title }}
+                    </div>
+                    <div class="suggestion-detail">
+                        {{ suggestion.detail }}
+                    </div>
+                </div>
+            </div>
+        </mat-list-item>
+    </ng-container>
+</mat-list>
+
+<mat-spinner [diameter]="30" strokeWidth="2"
+    style="margin-bottom: 10px; margin-left: auto; margin-right: auto; margin-top: 30px;margin-bottom: 30px;"
+    *ngIf="!showLoadingCurrentLocation && (selectAddressService.showPickupAddressSpinner || selectAddressService.showDropoffAddressSpinner)">
+</mat-spinner>
+
+<div *ngIf="!showLoadingCurrentLocation && selectAddressService.isCheck && isMobile"
+    style="width: 100%;display: flex;justify-content: center;margin-top: 20px;margin-bottom: 30px;">
+    <img [ngClass]="!showLoadingCurrentLocation && selectAddressService.isCheck && isMobile ? 'fadeAnim' : ''" width="30px" src="../../../../assets/icons/Checkmark.png" />
+</div>

@@ -1,0 +1,6 @@
+#change-theme-toggle {
+    z-index: 99999;
+    position: absolute;
+    right: 0;
+    background-color: white;
+}

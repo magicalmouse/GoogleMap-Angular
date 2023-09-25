@@ -1,0 +1,23 @@
+<div class="login-center">
+  <div class='mat-elevation-z4 login-container' style="background-color: #ffffff;">
+    <div id="login-box-header">
+      <div id="login-box-header-title">
+        Welcome Back!
+      </div>
+    </div>
+    <div id="content-wrapper">
+      <div appearance="fill">
+        <label class="form-label">Email*</label>
+        <input class="form-input" [(ngModel)]="userName" (keyup)="userNameKeyUp($event)" required>
+      </div>
+      <div appearance="fill" required *ngIf="!showForgotPassword">
+        <label class="form-label">Password*</label>
+        <input class="form-input" [(ngModel)]="password" [type]="'password'" (keyup)="passwordKeyUp($event)"
+          #passwordField required>
+      </div>
+
+      <button id="login-button" class="standard-button" mat-raised-button (click)="login()" *ngIf="!showForgotPassword">
+        Login
+      </button>
+    </div>
+  </div>

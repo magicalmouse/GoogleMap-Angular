@@ -1,0 +1,116 @@
+/* You can add global styles to this file, and also import other style files */
+
+* {
+    font-family: "Source Sans Pro", sans-serif !important;
+}
+
+::-webkit-scrollbar {
+    width: 0px;
+    background-color: rgb(116, 116, 116);
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: rgb(178, 178, 178);
+    border-radius: 100px;
+}
+
+mat-icon {
+    font-family: "Material Icons" !important;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    height: 100%;
+    overflow: hidden;
+    position: fixed;
+    /* caret-color: #426BF2; */
+}
+
+.material-icons {
+    font-family: "Material Icons" !important;
+    font-weight: normal;
+    font-style: normal;
+    font-size: 24px;
+    /* Preferred icon size */
+    display: inline-block;
+    line-height: 1;
+    text-transform: none;
+    letter-spacing: normal;
+    word-wrap: normal;
+    white-space: nowrap;
+    direction: ltr;
+
+    /* Support for all WebKit browsers. */
+    -webkit-font-smoothing: antialiased;
+    /* Support for Safari and Chrome. */
+    text-rendering: optimizeLegibility;
+
+    /* Support for Firefox. */
+    -moz-osx-font-smoothing: grayscale;
+
+    /* Support for IE. */
+    font-feature-settings: "liga";
+}
+
+.dialog-close-icon {
+    float: right;
+    margin-top: -15px;
+    margin-right: -15px;
+    cursor: pointer;
+}
+
+.spinner-overlay {
+    background-color: rgba(0, 0, 0, 0.3);
+    width: 100vw;
+    height: 100vh;
+    z-index: 9999;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* .mat-form-field-appearance-outline .mat-form-field-prefix {
+    height: 15px !important;
+    top: -0.1em !important;
+    line-height: 15px !important;
+    font-size: 14px !important;
+} */
+
+/* ::-webkit-input-placeholder {
+    color: pink !important;
+    vertical-align: bottom !important;
+} */
+
+.mat-form-field-infix {
+    /* background-color: blue; */
+    display: flex !important;
+}
+
+input.mat-input-element {
+    margin-top: 0px;
+    font-size: 16px;
+}
+
+.mat-form-field-appearance-outline .mat-form-field-outline {
+    top: 0 !important;
+}
+
+@media screen and (max-width: 700px) {
+    .mat-dialog-content {
+        max-height: unset !important;
+    }
+}
+
+/* @media (orientation: landscape) {
+    body {
+      transform: rotate(-90deg);
+    }
+} */

@@ -1,0 +1,34 @@
+<mat-icon class="dialog-close-icon" [mat-dialog-close]="false">close</mat-icon>
+<h1 mat-dialog-title style="text-align: center;">How to ride from {{pickupName}}</h1>
+<div mat-dialog-content class="polygon-check-dialog-content">
+    <div style=" display: flex; justify-content:center;">
+        <img class="img-guide-description" style="width: 90px;" src="https://i.postimg.cc/s2LKrbfk/New-Project.png"/>
+    </div>
+
+    <h3 style="text-align: center; text-decoration: none;
+   margin: 0; font-weight: 100; font-size: 16px; margin-top: 15px;
+    ">Cabs are only available at the {{pickupName}}-it pickup lot near Terminal 1. You can walk there or catch the free LAX-it shuttle by waiting by the green columns.</h3>
+    <h3 style="text-align: center; text-decoration: none;
+   margin: 0; font-weight: 100; font-size: 16px; margin-top: 15px;
+    ">You can get an upfront price for your ride instead of the driver running the meter by creating a Trip Code.</h3>
+    
+
+    <h3 style="text-decoration: underline; text-align: center;">HOW IT WORKS</h3>
+    <ol style="padding: 15px;">
+        <li>Finalize your ride details, then press "Trip Code" to create your code.
+        </li>
+        <li style="margin-top: 10px;">
+            When you get to {{pickupName}}-it, notify the {{pickupName}} staff that you have a Trip Code.
+        </li>
+        <li style="margin-top: 10px;">
+            Hop into either a <span style="color: rgb(255 248 47);">LA Yellow Cab or United Checker Cab</span>, show the code to your driver, and be on your way!
+        </li>
+        
+    </ol>    
+</div>
+
+<div mat-dialog-actions class="action-buttons">
+    <button mat-button mat-stroked-button [mat-dialog-close]="true" style="width: 134px;height: 48px; font-size: 1.1rem; font-weight: 600; background-color: white; color: rgb(13,13,13); border-radius: 7px;">
+        Got it!
+    </button>
+</div>

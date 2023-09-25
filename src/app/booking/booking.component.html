@@ -1,0 +1,6 @@
+<div id="ride-details-drag-container">
+    <!-- <app-setting-change-theme></app-setting-change-theme> -->
+    <app-account-info [custId]="custId" [name]="name"></app-account-info>
+    <app-map [outDisplayBubble]="outDisplayBubble"></app-map>
+    <app-ride-details [username]="username" (displayBubble)="displayBubble($event)"></app-ride-details>
+</div>

@@ -1,0 +1,970 @@
+# this is an auto generated file. This will be overwritten
+mutation BraintreePay(
+  $server: String!
+  $context: String!
+  $userId: String!
+  $cardId: String
+  $firstName: String
+  $lastName: String
+  $phone: String
+  $email: String
+  $customerId: String
+  $paymentNonce: String
+  $deviceData: String
+  $zipCode: String
+) {
+  braintreePay(
+    server: $server
+    context: $context
+    userId: $userId
+    cardId: $cardId
+    firstName: $firstName
+    lastName: $lastName
+    phone: $phone
+    email: $email
+    customerId: $customerId
+    paymentNonce: $paymentNonce
+    deviceData: $deviceData
+    zipCode: $zipCode
+  ) {
+    status
+    error
+    item {
+      UserId
+      cardId
+      CardNbr
+      CustomerId
+      PaymentId
+      CardType
+      active
+    }
+    paymentMethods {
+      UserId
+      cardId
+      CardNbr
+      CustomerId
+      PaymentId
+      CardType
+      active
+    }
+  }
+}
+mutation CompleteSignUp(
+  $phone: String!
+  $firstName: String
+  $lastName: String
+  $email: String
+  $password: String
+  $acceptTerms: Boolean
+) {
+  completeSignUp(
+    phone: $phone
+    firstName: $firstName
+    lastName: $lastName
+    email: $email
+    password: $password
+    acceptTerms: $acceptTerms
+  ) {
+    error
+    data {
+      userId
+      deviceId
+      refreshToken
+      sessionToken
+      refreshExpire
+      sessionExpire
+    }
+    messages {
+      appMessage
+      userMessage
+    }
+  }
+}
+mutation EnterCodeAuthenticate($code: String!, $deviceID: String!) {
+  enterCodeAuthenticate(code: $code, deviceID: $deviceID) {
+    ... on AuthenticateResponse {
+      tokens {
+        refresh {
+          value
+          expire
+        }
+        session {
+          value
+          expire
+        }
+      }
+      authenticateInfo {
+        ... on SignUpStep {
+          unused
+        }
+        ... on User {
+          userId
+          lname
+          fname
+          email
+          phone
+          postalCode
+          dateActive
+          defaultTip {
+            tipType
+            value
+          }
+        }
+      }
+    }
+    ... on PasswordRequiredFlag {
+      unused
+    }
+    ... on Errors {
+      errorCode
+      messages {
+        appMessage
+        userMessage
+      }
+    }
+  }
+}
+mutation EnterPasswordAuthenticate($password: String!, $deviceID: String!) {
+  enterPasswordAuthenticate(password: $password, deviceID: $deviceID) {
+    ... on AuthenticateResponse {
+      tokens {
+        refresh {
+          value
+          expire
+        }
+        session {
+          value
+          expire
+        }
+      }
+      authenticateInfo {
+        ... on SignUpStep {
+          unused
+        }
+        ... on User {
+          userId
+          lname
+          fname
+          email
+          phone
+          postalCode
+          dateActive
+          defaultTip {
+            tipType
+            value
+          }
+        }
+      }
+    }
+    ... on Errors {
+      errorCode
+      messages {
+        appMessage
+        userMessage
+      }
+    }
+  }
+}
+mutation EnterPhoneNbrAuthenticate($phone: String!, $deviceID: String!) {
+  enterPhoneNbrAuthenticate(phone: $phone, deviceID: $deviceID) {
+    ... on AuthenticateResponse {
+      tokens {
+        refresh {
+          value
+          expire
+        }
+        session {
+          value
+          expire
+        }
+      }
+      authenticateInfo {
+        ... on SignUpStep {
+          unused
+        }
+        ... on User {
+          userId
+          lname
+          fname
+          email
+          phone
+          postalCode
+          dateActive
+          defaultTip {
+            tipType
+            value
+          }
+        }
+      }
+    }
+    ... on Errors {
+      errorCode
+      messages {
+        appMessage
+        userMessage
+      }
+    }
+  }
+}
+mutation CheckPromo($type: String!, $promoId: Int!) {
+  checkPromo(type: $type, promoId: $promoId) {
+    error
+    data {
+      promoId
+    }
+    messages {
+      appMessage
+      userMessage
+    }
+  }
+}
+mutation AddPromo($type: String!, $promo_code: String!, $userId: String!) {
+  addPromo(type: $type, promo_code: $promo_code, userId: $userId) {
+    error
+    data {
+      id
+      promo_code
+      promo_type
+      promo_title
+      amount {
+        AmtOrPercentage
+        amount
+        MaxSaving
+      }
+      promo_short_description
+      promo_long_description
+      expiry_date
+      start_date
+      evergreen
+      status
+      fleet {
+        allfleets
+        data
+      }
+      usage_limit {
+        CoupounLimit
+        CouponLimitStatus
+      }
+      customers
+      isallcustomers
+      expiry_status
+      valid_area
+    }
+    messages {
+      appMessage
+      userMessage
+    }
+  }
+}
+mutation PaymentAddCustomerCard(
+  $method: String!
+  $uid: String!
+  $card_nonce: String
+  $postal_code: String
+) {
+  paymentAddCustomerCard(
+    method: $method
+    uid: $uid
+    card_nonce: $card_nonce
+    postal_code: $postal_code
+  ) {
+    uid
+    method
+    error
+    data {
+      error
+      statusCode
+      cards {
+        id
+        last_4
+        exp_year
+        exp_month
+        card_brand
+        billing_address {
+          postal_code
+        }
+        isProfile
+        email
+        profile_type
+      }
+    }
+    messages {
+      appMessage
+      userMessage
+    }
+  }
+}
+mutation PaymentDeleteCustomerCard(
+  $method: String!
+  $uid: String!
+  $card_id: String!
+) {
+  paymentDeleteCustomerCard(method: $method, uid: $uid, card_id: $card_id) {
+    uid
+    method
+    error
+    data {
+      error
+      statusCode
+      card_id
+    }
+    messages {
+      appMessage
+      userMessage
+    }
+  }
+}
+mutation PaymentAddProfile(
+  $method: String!
+  $uid: String!
+  $card_id: String!
+  $email: String
+  $profile_type: String
+) {
+  paymentAddProfile(
+    method: $method
+    uid: $uid
+    card_id: $card_id
+    email: $email
+    profile_type: $profile_type
+  ) {
+    uid
+    method
+    error
+    data {
+      error
+      statusCode
+    }
+    messages {
+      appMessage
+      userMessage
+    }
+  }
+}
+mutation SetDefaultTip(
+  $type: String!
+  $userId: String!
+  $tipType: String!
+  $value: Int!
+) {
+  setDefaultTip(
+    type: $type
+    userId: $userId
+    tipType: $tipType
+    value: $value
+  ) {
+    error
+    data {
+      error
+      statusCode
+      data {
+        tipType
+        value
+      }
+    }
+    messages {
+      appMessage
+      userMessage
+    }
+  }
+}
+mutation ServiceAreaCheck(
+  $type: String
+  $lat: Float
+  $lng: Float
+  $apiKey: String
+) {
+  serviceAreaCheck(type: $type, lat: $lat, lng: $lng, apiKey: $apiKey) {
+    status
+    geometry {
+      fleet
+      zone
+      distance
+      entity
+    }
+  }
+}
+mutation InsertTrip(
+  $userId: String!
+  $comment: String
+  $pkupDate: String
+  $pkupStreet: String
+  $pkupApt: String
+  $pkupCity: String
+  $pkupState: String
+  $pkupZip: String
+  $pkupLat: Float
+  $pkupLng: Float
+  $destStreet: String
+  $destApt: String
+  $destCity: String
+  $destState: String
+  $destZip: String
+  $destLat: Float
+  $destLng: Float
+  $nbrPass: Int
+  $tripRate: Float
+  $distance: Float
+  $timeEstimate: Float
+  $isNow: Boolean
+  $couponId: String
+  $source: String
+  $vehicleType: String
+  $pickupTime: String
+  $paymentId: String
+  $paymentMethod: String
+  $tip: Float
+  $tipType: String
+  $isWillCall: Boolean
+  $phone: String
+  $firstName: String
+  $lastName: String
+  $strAccountNbr: String
+  $ClientInfo1: String
+  $ClientInfo2: String
+  $ClientInfo3: String
+  $ClientInfo4: String
+  $ClientInfo5: String
+  $ClientInfo6: String
+  $PricingEngineData: String
+  $ApiStage: Boolean
+  $isCash: Boolean
+  $tripType: String
+) {
+  insertTrip(
+    userId: $userId
+    comment: $comment
+    pkupDate: $pkupDate
+    pkupStreet: $pkupStreet
+    pkupApt: $pkupApt
+    pkupCity: $pkupCity
+    pkupState: $pkupState
+    pkupZip: $pkupZip
+    pkupLat: $pkupLat
+    pkupLng: $pkupLng
+    destStreet: $destStreet
+    destApt: $destApt
+    destCity: $destCity
+    destState: $destState
+    destZip: $destZip
+    destLat: $destLat
+    destLng: $destLng
+    nbrPass: $nbrPass
+    tripRate: $tripRate
+    distance: $distance
+    timeEstimate: $timeEstimate
+    isNow: $isNow
+    couponId: $couponId
+    source: $source
+    vehicleType: $vehicleType
+    pickupTime: $pickupTime
+    paymentId: $paymentId
+    paymentMethod: $paymentMethod
+    tip: $tip
+    tipType: $tipType
+    isWillCall: $isWillCall
+    phone: $phone
+    firstName: $firstName
+    lastName: $lastName
+    strAccountNbr: $strAccountNbr
+    ClientInfo1: $ClientInfo1
+    ClientInfo2: $ClientInfo2
+    ClientInfo3: $ClientInfo3
+    ClientInfo4: $ClientInfo4
+    ClientInfo5: $ClientInfo5
+    ClientInfo6: $ClientInfo6
+    PricingEngineData: $PricingEngineData
+    ApiStage: $ApiStage
+    isCash: $isCash
+    tripType: $tripType
+  ) {
+    error
+    data {
+      error
+      errorCode
+      zoneId
+      tripNbr
+      companyPhone
+      servicingCompany
+      questions
+    }
+    messages {
+      appMessage
+      userMessage
+    }
+  }
+}
+
+mutation VerifyPhone($phone: String!) {
+  verifyPhone(phone: $phone) {
+    ... on VerifyPhoneResponse {
+      response {
+        ... on VerifyPhoneAuthenticateData {
+          codeSkippable
+        }
+        ... on VerifyPhoneSignUpData {
+          unused
+          data
+        }
+      }
+    }
+    ... on Errors {
+      errorCode
+      messages {
+        appMessage
+        userMessage
+      }
+    }
+  }
+}
+mutation EnterCodeEarlySignUp($pin: String!, $phone: String!) {
+  enterCodeEarlySignUp(pin: $pin, phone: $phone) {
+    ... on Success {
+      unused
+    }
+    ... on Errors {
+      errorCode
+      messages {
+        appMessage
+        userMessage
+      }
+    }
+  }
+}
+mutation EnterEmail($email: String!, $deviceID: String!) {
+  enterEmail(email: $email, deviceID: $deviceID) {
+    ... on Success {
+      unused
+    }
+    ... on Errors {
+      errorCode
+      messages {
+        appMessage
+        userMessage
+      }
+    }
+  }
+}
+mutation EnterPasswordEarlySignup($password: String!, $deviceID: String!) {
+  enterPasswordEarlySignup(password: $password, deviceID: $deviceID) {
+    ... on Tokens {
+      refresh {
+        value
+        expire
+      }
+      session {
+        value
+        expire
+      }
+    }
+    ... on Errors {
+      errorCode
+      messages {
+        appMessage
+        userMessage
+      }
+    }
+  }
+}
+mutation EnterName(
+  $fname: String!
+  $lname: String!
+  $sessionToken: String!
+  $deviceID: String!
+) {
+  enterName(
+    fname: $fname
+    lname: $lname
+    sessionToken: $sessionToken
+    deviceID: $deviceID
+  ) {
+    ... on Success {
+      unused
+    }
+    ... on Errors {
+      errorCode
+      messages {
+        appMessage
+        userMessage
+      }
+    }
+  }
+}
+mutation AcceptTerms($sessionToken: String!, $deviceID: String!) {
+  acceptTerms(sessionToken: $sessionToken, deviceID: $deviceID) {
+    ... on User {
+      userId
+      lname
+      fname
+      email
+      phone
+      postalCode
+      dateActive
+      defaultTip {
+        tipType
+        value
+      }
+    }
+    ... on Errors {
+      errorCode
+      messages {
+        appMessage
+        userMessage
+      }
+    }
+  }
+}
+mutation GetVehicles(
+  $lat: Float!
+  $lng: Float!
+  $fleetId: String!
+  $zoneId: String!
+  $departureDate: String!
+) {
+  getVehicles(
+    lat: $lat
+    lng: $lng
+    fleetId: $fleetId
+    zoneId: $zoneId
+    departureDate: $departureDate
+  ) {
+    error
+    data {
+      eta
+      vehicles {
+        vehicleId
+        lat
+        lng
+        types
+        distance
+        gpsDirection
+      }
+    }
+    messages {
+      appMessage
+      userMessage
+    }
+  }
+}
+mutation UpdateVehicleStatus($input: VehicleStatusInput!) {
+  updateVehicleStatus(input: $input) {
+    vehicleId
+    driverId
+    gpsDirection
+    lat
+    lng
+    locationTimeStamp
+    postedStatus
+    tripStatus
+    currentMeterFare
+    currentMeterTotalDist
+    meterRate1Set
+    meterRate2Set
+  }
+}
+mutation GetLocationForLatLng($lat: Float!, $lng: Float, $userId: String!) {
+  getLocationForLatLng(lat: $lat, lng: $lng, userId: $userId) {
+    status
+    address {
+      Street
+      City
+      State
+      Zip
+      Lat
+      Lng
+    }
+  }
+}
+
+mutation CancelTrip($tripNbr: Int!, $zoneId: String!) {
+  cancelTrip(tripNbr: $tripNbr, zoneId: $zoneId) {
+    error
+    data {
+      error
+      errorCode
+    }
+    messages {
+      appMessage
+      userMessage
+    }
+  }
+}
+mutation UpdateTripStatus(
+  $zoneId: String!
+  $tripNbr: Int!
+  $fleetId: String
+  $comment: String
+  $pkupDate: String
+  $pkupStreet: String
+  $pkupApt: String
+  $pkupCity: String
+  $pkupState: String
+  $pkupZip: String
+  $pkupLat: Float
+  $pkupLng: Float
+  $destStreet: String
+  $destApt: String
+  $destCity: String
+  $destState: String
+  $destZip: String
+  $destLat: Float
+  $destLng: Float
+  $status: String
+  $statusTime: String
+  $vehicleNbr: Int
+  $driverId: Int
+  $finalFare: Float
+  $ratingStatus: Boolean
+  $tipStatus: Boolean
+) {
+  updateTripStatus(
+    zoneId: $zoneId
+    tripNbr: $tripNbr
+    fleetId: $fleetId
+    comment: $comment
+    pkupDate: $pkupDate
+    pkupStreet: $pkupStreet
+    pkupApt: $pkupApt
+    pkupCity: $pkupCity
+    pkupState: $pkupState
+    pkupZip: $pkupZip
+    pkupLat: $pkupLat
+    pkupLng: $pkupLng
+    destStreet: $destStreet
+    destApt: $destApt
+    destCity: $destCity
+    destState: $destState
+    destZip: $destZip
+    destLat: $destLat
+    destLng: $destLng
+    status: $status
+    statusTime: $statusTime
+    vehicleNbr: $vehicleNbr
+    driverId: $driverId
+    finalFare: $finalFare
+    ratingStatus: $ratingStatus
+    tipStatus: $tipStatus
+  ) {
+    tripNbr
+    zoneId
+    fleetId
+    userId
+    comment
+    pkupDate
+    pkupStreet
+    pkupApt
+    pkupCity
+    pkupState
+    pkupZip
+    pkupLat
+    pkupLng
+    destStreet
+    destApt
+    destCity
+    destState
+    destZip
+    destLat
+    destLng
+    nbrPass
+    tripRate
+    distance
+    timeEstimate
+    isNow
+    couponId
+    source
+    vehicleType
+    pickupTime
+    paymentId
+    paymentMethod
+    tip
+    tipType
+    tripMinutes
+    tripStatus {
+      appMessage
+      userMessage
+    }
+    status
+    statusTime
+    vehicleNbr
+    driverId
+    finalFare
+    ratingStatus
+    tipStatus
+  }
+}
+mutation SignInPassword($deviceId: String!, $password: String!) {
+  signInPassword(deviceId: $deviceId, password: $password) {
+    ... on Tokens {
+      refresh {
+        value
+        expire
+      }
+      session {
+        value
+        expire
+      }
+    }
+    ... on Errors {
+      errorCode
+      messages {
+        appMessage
+        userMessage
+      }
+    }
+  }
+}
+mutation AddTip(
+  $method: String!
+  $tripid: Int!
+  $tipType: String!
+  $tipValue: Float!
+) {
+  addTip(
+    method: $method
+    tripid: $tripid
+    tipType: $tipType
+    tipValue: $tipValue
+  ) {
+    error
+    data {
+      error
+      statusCode
+    }
+    messages {
+      appMessage
+      userMessage
+    }
+  }
+}
+mutation AddRatingAndChargeTip(
+  $rating: Int!
+  $method: String!
+  $tripid: Int!
+  $tipType: String!
+  $tipValue: Float!
+) {
+  addRatingAndChargeTip(
+    rating: $rating
+    method: $method
+    tripid: $tripid
+    tipType: $tipType
+    tipValue: $tipValue
+  ) {
+    RatingError
+    tipPaymentError
+    data {
+      error
+      statusCode
+    }
+    messages {
+      appMessage
+      userMessage
+    }
+  }
+}
+mutation AddFeedback(
+  $method: String!
+  $imageUrls: [String]
+  $userId: String
+  $feedback: String
+) {
+  addFeedback(
+    method: $method
+    imageUrls: $imageUrls
+    userId: $userId
+    feedback: $feedback
+  ) {
+    error
+    data {
+      error
+      statusCode
+    }
+    messages {
+      appMessage
+      userMessage
+    }
+  }
+}
+mutation ForgotPasswordRequest($email: String!) {
+  forgotPasswordRequest(email: $email) {
+    error
+    data {
+      error
+      errorCode
+    }
+    messages {
+      appMessage
+      userMessage
+    }
+  }
+}
+mutation DriverInfo($driverId: Int!, $fleetId: String!) {
+  driverInfo(driverId: $driverId, fleetId: $fleetId) {
+    error
+    data {
+      statusCode
+      lname
+      fname
+      imageUrl
+    }
+    messages {
+      appMessage
+      userMessage
+    }
+  }
+}
+mutation FleetInfo($tripId: Int!) {
+  fleetInfo(tripId: $tripId) {
+    error
+    data {
+      statusCode
+      fleetName
+      logo
+    }
+    messages {
+      appMessage
+      userMessage
+    }
+  }
+}
+mutation AddFcmToken(
+  $method: String!
+  $userId: String!
+  $deviceId: String!
+  $fcmToken: String!
+) {
+  addFcmToken(
+    method: $method
+    userId: $userId
+    deviceId: $deviceId
+    fcmToken: $fcmToken
+  ) {
+    error
+    statusCode
+    messages {
+      appMessage
+      userMessage
+    }
+  }
+}
+mutation ChangeCard($method: String!, $tripId: Int!, $newCard: String!) {
+  changeCard(method: $method, tripId: $tripId, newCard: $newCard) {
+    error
+    statusCode
+    data
+    messages {
+      appMessage
+      userMessage
+    }
+  }
+}
+mutation RedeemPromo($type: String!, $user_id: String!, $promo_id: Int!) {
+  redeemPromo(type: $type, user_id: $user_id, promo_id: $promo_id) {
+    error
+    data
+    messages {
+      appMessage
+      userMessage
+    }
+  }
+}

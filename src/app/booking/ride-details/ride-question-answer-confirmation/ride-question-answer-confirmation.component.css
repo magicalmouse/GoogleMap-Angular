@@ -1,0 +1,14 @@
+.vehicle-type-container {
+    margin-top: 20px;
+}
+
+.selectable-vehicle-types .vehicle-type-container {
+    border: none !important;
+    width: 400px;
+}
+
+@media screen and (max-width: 800px) {
+    .selectable-vehicle-types .vehicle-type-container {
+        width: auto;
+    }   
+}

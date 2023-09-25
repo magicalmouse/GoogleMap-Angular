@@ -1,0 +1,178 @@
+.dateTimeSelect-custom-dialog .mat-dialog-container {
+    padding: 12px 18px 14px 18px !important;
+}
+
+.datetime-select-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.datetime-select-header h4,
+h5 {
+    margin: 0;
+}
+
+.willcall-content {
+    margin-top: 21px;
+    flex-direction: row;
+}
+
+.willcall-datepicker {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 131px;
+    height: 37px;
+    border: 1px solid #919191;
+    border-radius: 5px;
+    transition: border-color 0.3s ease-out 0.2s;
+    cursor: pointer;
+    position: relative;
+}
+
+.willcall-datepicker input {
+    display: none;
+}
+
+
+
+.willcall-datepicker:focus {
+    border-color: white;
+}
+
+.dateshow {
+    margin-left: -4px;
+    /* position: absolute;
+    right: 0; */
+}
+
+.time-form-field {
+    margin: auto 5px;
+    width: 36px;
+    height: 37px;
+    border: 1px solid #919191;
+    border-radius: 5px;
+
+    display: flex;
+    align-items: center;
+    transition: border-color 0.3s ease-out 0.2s;
+}
+
+/* your.component.css */
+
+mat-select {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    height: 100%;
+}
+
+.mat-select-arrow-wrapper {
+    display: none !important;
+}
+
+.mat-select-trigger {
+    width: 100%;
+    height: 100%;
+}
+
+/* calendar */
+.datepicker mat-icon {
+    font-size: 16px;
+}
+
+.mat-select-value {
+    overflow: unset !important;
+    max-width: 72px !important;
+    height: 100%;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center;
+}
+
+.double-point {
+    text-align: center;
+    display: flex;
+    align-items: center;
+}
+
+.datepicker input {
+    font-size: 16px;
+}
+
+.double-point {
+    font-size: 18px;
+}
+
+.time-form-field span {
+    font-size: 18px;
+}
+
+
+/* btn-change-period */
+.btn-change-period {
+    font-size: 18px;
+    /* margin: auto 5px; */
+    width: 38px;
+    height: 39px;
+    border: 1px solid #919191;
+    border-radius: 5px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+    color: white;
+    transition: border-color 0.3s ease-out 0.2s;
+    cursor: pointer;
+}
+
+
+.mat-datepicker-popup {
+    left: 61px !important;
+    top: 436px !important;
+}
+
+.mat-datepicker-content .mat-calendar {
+    height: fit-content !important;
+    padding-bottom: 20px !important;
+}
+
+@media screen and (max-width: 800px) {
+    .mat-datepicker-popup {
+        left: 50% !important;
+        top: 50% !important;
+        transform: translate(-50%, -50%);
+    }
+}
+
+
+.mat-option-text {
+    text-align: center;
+    border-bottom: 2px solid grey;
+}
+
+/* Scrollbar of select option tag */
+/* CSS to customize the scrollbar */
+/* width */
+::-webkit-scrollbar {
+    width: 6px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px rgb(75, 75, 75);
+    border-radius: 3px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: rgb(161, 160, 160);
+    border-radius: 3px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #555555;
+}

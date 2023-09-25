@@ -1,0 +1,703 @@
+# this is an auto generated file. This will be overwritten
+query MessageDriver(
+  $zoneId: String!
+  $tripNbr: Int!
+  $msg: String!
+  $source: String!
+) {
+  messageDriver(
+    zoneId: $zoneId
+    tripNbr: $tripNbr
+    msg: $msg
+    source: $source
+  ) {
+    error
+    data {
+      error
+      errorCode
+    }
+    messages {
+      appMessage
+      userMessage
+    }
+  }
+}
+query CallDriver($fleetId: String!, $zoneId: String!, $vehicleNbr: Int) {
+  callDriver(fleetId: $fleetId, zoneId: $zoneId, vehicleNbr: $vehicleNbr) {
+    error
+    data {
+      error
+      errorCode
+    }
+    messages {
+      appMessage
+      userMessage
+    }
+  }
+}
+query GetAllRecentLocations($userId: String!) {
+  getAllRecentLocations(userId: $userId) {
+    error
+    data {
+      locations {
+        Street
+        City
+        State
+        Zip
+        Lat
+        Lng
+      }
+    }
+    messages {
+      appMessage
+      userMessage
+    }
+  }
+}
+query GetAllCustomerCard($method: String!, $uid: String!) {
+  getAllCustomerCard(method: $method, uid: $uid) {
+    error
+    data {
+      error
+      statusCode
+      cards {
+        id
+        last_4
+        exp_year
+        exp_month
+        card_brand
+        billing_address {
+          postal_code
+        }
+        isProfile
+        email
+        profile_type
+      }
+    }
+    messages {
+      appMessage
+      userMessage
+    }
+  }
+}
+query GetAllPromo($type: String!, $userId: String!, $zipCode: String) {
+  getAllPromo(type: $type, userId: $userId, zipCode: $zipCode) {
+    error
+    data {
+      id
+      promo_code
+      promo_type
+      promo_title
+      amount {
+        AmtOrPercentage
+        amount
+        MaxSaving
+      }
+      promo_short_description
+      promo_long_description
+      expiry_date
+      start_date
+      evergreen
+      status
+      fleet {
+        allfleets
+        data
+      }
+      usage_limit {
+        CoupounLimit
+        CouponLimitStatus
+      }
+      customers
+      isallcustomers
+      expiry_status
+      valid_area
+    }
+    messages {
+      appMessage
+      userMessage
+    }
+  }
+}
+query GetSelectedPromo($type: String!, $userId: String!, $zipCode: String) {
+  getSelectedPromo(type: $type, userId: $userId, zipCode: $zipCode) {
+    error
+    data {
+      id
+      promo_code
+      promo_type
+      promo_title
+      amount {
+        AmtOrPercentage
+        amount
+        MaxSaving
+      }
+      promo_short_description
+      promo_long_description
+      expiry_date
+      start_date
+      evergreen
+      status
+      fleet {
+        allfleets
+        data
+      }
+      usage_limit {
+        CoupounLimit
+        CouponLimitStatus
+      }
+      customers
+      isallcustomers
+      expiry_status
+      valid_area
+    }
+    messages {
+      appMessage
+      userMessage
+    }
+  }
+}
+query GetPromoDetail($type: String!, $id: String!) {
+  getPromoDetail(type: $type, id: $id) {
+    error
+    data {
+      id
+      promo_code
+      promo_type
+      promo_title
+      amount {
+        AmtOrPercentage
+        amount
+        MaxSaving
+      }
+      promo_short_description
+      promo_long_description
+      expiry_date
+      start_date
+      evergreen
+      status
+      fleet {
+        allfleets
+        data
+      }
+      usage_limit {
+        CoupounLimit
+        CouponLimitStatus
+      }
+      customers
+      isallcustomers
+      expiry_status
+      valid_area
+    }
+    messages {
+      appMessage
+      userMessage
+    }
+  }
+}
+query GetDefaultTip($type: String!, $userId: String!) {
+  getDefaultTip(type: $type, userId: $userId) {
+    error
+    data {
+      error
+      statusCode
+      data {
+        tipType
+        value
+      }
+    }
+    messages {
+      appMessage
+      userMessage
+    }
+  }
+}
+query GetTripStatus($tripNbr: Int!, $zoneId: String) {
+  getTripStatus(tripNbr: $tripNbr, zoneId: $zoneId) {
+    error
+    data {
+      error
+      errorCode
+      cabNbr
+      fltId
+      cabLat
+      cabLng
+      cabMph
+      cabType
+      cabDirection
+      eta
+      driverName
+      driverPicUrl
+      plateNbr
+      isComplete
+    }
+    messages {
+      appMessage
+      userMessage
+    }
+  }
+}
+query GetUserDetails($userId: String!) {
+  getUserDetails(userId: $userId) {
+    error
+    statusCode
+    data {
+      dateActive
+      email
+      lname
+      fname
+      userId
+      phone
+      postal_code
+      defaultTip {
+        tipType
+        value
+      }
+    }
+    msg {
+      appMessage
+      userMessage
+    }
+  }
+}
+query GetFarePrice(
+  $departureDate: String
+  $pkupStrNbr: Int
+  $pkupStrName: String
+  $pkupApt: String
+  $pkupCity: String
+  $pkupState: String
+  $pkupZip: String
+  $pkupLat: Float
+  $pkupLon: Float
+  $destStrNbr: Int
+  $destStrName: String
+  $destApt: String
+  $destCity: String
+  $destState: String
+  $destZip: String
+  $destLat: Float
+  $destLon: Float
+  $userId: String
+  $source: String
+  $tripType: String
+  $strAccountNbr: String
+) {
+  getFarePrice(
+    departureDate: $departureDate
+    pkupStrNbr: $pkupStrNbr
+    pkupStrName: $pkupStrName
+    pkupApt: $pkupApt
+    pkupCity: $pkupCity
+    pkupState: $pkupState
+    pkupZip: $pkupZip
+    pkupLat: $pkupLat
+    pkupLon: $pkupLon
+    destStrNbr: $destStrNbr
+    destStrName: $destStrName
+    destApt: $destApt
+    destCity: $destCity
+    destState: $destState
+    destZip: $destZip
+    destLat: $destLat
+    destLon: $destLon
+    userId: $userId
+    source: $source
+    tripType: $tripType
+    strAccountNbr: $strAccountNbr
+  ) {
+    error
+    data {
+      error
+      errorCode
+      fare
+      miles
+      minutes
+      promoStatus
+      promoId
+      promoType
+      promoAmount
+      promoMaxSaving
+      discount
+      discountedFare
+      displayFare
+    }
+    messages {
+      appMessage
+      userMessage
+    }
+  }
+}
+query GetTypes(
+  $accessMode: String!
+  $lat: Float!
+  $lng: Float!
+  $zoneId: String!
+) {
+  getTypes(accessMode: $accessMode, lat: $lat, lng: $lng, zoneId: $zoneId) {
+    error
+    data {
+      error
+      errorCode
+      eta
+      types {
+        type
+        eta
+      }
+      vehicles {
+        vehicleId
+        lat
+        lng
+        types
+        distance
+        gpsDirection
+      }
+    }
+    messages {
+      appMessage
+      userMessage
+    }
+  }
+}
+query Authenticate(
+  $type: String!
+  $password: String
+  $deviceId: String
+  $refreshToken: String
+) {
+  authenticate(
+    type: $type
+    password: $password
+    deviceId: $deviceId
+    refreshToken: $refreshToken
+  ) {
+    error
+    data {
+      error
+      errorCode
+      refreshToken
+      sessionToken
+      refreshExpire
+      sessionExpire
+    }
+    messages {
+      appMessage
+      userMessage
+    }
+  }
+}
+query GetVehicleStatus($vehicleId: String!) {
+  getVehicleStatus(vehicleId: $vehicleId) {
+    ... on Errors {
+      errorCode
+      messages {
+        appMessage
+        userMessage
+      }
+    }
+    ... on VehicleStatus {
+      vehicleId
+      driverId
+      gpsDirection
+      lat
+      lng
+      locationTimeStamp
+      postedStatus
+      tripStatus
+      currentMeterFare
+      currentMeterTotalDist
+      meterRate1Set
+      meterRate2Set
+    }
+  }
+}
+query GetRecentUpcomingTrips($userId: String!) {
+  getRecentUpcomingTrips(userId: $userId) {
+    status
+    trips {
+      tripNbr
+      zoneId
+      fleetId
+      userId
+      comment
+      pkupDate
+      pkupStreet
+      pkupApt
+      pkupCity
+      pkupState
+      pkupZip
+      pkupLat
+      pkupLng
+      destStreet
+      destApt
+      destCity
+      destState
+      destZip
+      destLat
+      destLng
+      nbrPass
+      tripRate
+      distance
+      timeEstimate
+      isNow
+      couponId
+      source
+      vehicleType
+      pickupTime
+      paymentId
+      paymentMethod
+      tip
+      tipType
+      tripMinutes
+      tripStatus {
+        appMessage
+        userMessage
+      }
+      status
+      statusTime
+      vehicleNbr
+      driverId
+      finalFare
+      ratingStatus
+      tipStatus
+    }
+  }
+}
+query GetRideOverviewData(
+  $departureDate: String!
+  $pkupLat: Float!
+  $pkupLng: Float!
+  $destLat: Float!
+  $destLng: Float!
+  $fleetId: String!
+  $zoneId: String!
+) {
+  getRideOverviewData(
+    departureDate: $departureDate
+    pkupLat: $pkupLat
+    pkupLng: $pkupLng
+    destLat: $destLat
+    destLng: $destLng
+    fleetId: $fleetId
+    zoneId: $zoneId
+  ) {
+    error
+    data {
+      fare {
+        error
+        data {
+          error
+          errorCode
+          fare
+          miles
+          minutes
+          promoStatus
+          promoId
+          promoType
+          promoAmount
+          promoMaxSaving
+          discount
+          discountedFare
+          displayFare
+        }
+        messages {
+          appMessage
+          userMessage
+        }
+      }
+      vehicles {
+        error
+        data {
+          eta
+          vehicles {
+            vehicleId
+            lat
+            lng
+            types
+            distance
+            gpsDirection
+          }
+        }
+        messages {
+          appMessage
+          userMessage
+        }
+      }
+    }
+    messages {
+      appMessage
+      userMessage
+    }
+  }
+}
+query GetUserTrips($userId: String!) {
+  getUserTrips(userId: $userId) {
+    error
+    data {
+      error
+      errorCode
+      trips {
+        tripNbr
+        zoneId
+        fleetId
+        userId
+        comment
+        pkupDate
+        pkupStreet
+        pkupApt
+        pkupCity
+        pkupState
+        pkupZip
+        pkupLat
+        pkupLng
+        destStreet
+        destApt
+        destCity
+        destState
+        destZip
+        destLat
+        destLng
+        nbrPass
+        tripRate
+        distance
+        timeEstimate
+        isNow
+        couponId
+        source
+        vehicleType
+        pickupTime
+        paymentId
+        paymentMethod
+        tip
+        tipType
+        tripMinutes
+        tripStatus {
+          appMessage
+          userMessage
+        }
+        status
+        statusTime
+        vehicleNbr
+        driverId
+        finalFare
+        ratingStatus
+        tipStatus
+      }
+    }
+    messages {
+      appMessage
+      userMessage
+    }
+  }
+}
+query FindCabsUsingHash($type: String!, $lat: Float!, $long: Float!) {
+  findCabsUsingHash(type: $type, lat: $lat, long: $long) {
+    error
+    data
+  }
+}
+query VehicleInfo($fleetId: String!, $vehicleNbr: Int!) {
+  vehicleInfo(fleetId: $fleetId, vehicleNbr: $vehicleNbr) {
+    ... on VehicleInfoData {
+      vehicleNbr
+      fleetId
+      make
+      model
+      plate
+    }
+    ... on Errors {
+      errorCode
+      messages {
+        appMessage
+        userMessage
+      }
+    }
+  }
+}
+query DriverVehicleInfo($fleetId: String!, $driverId: Int!, $vehicleNbr: Int!) {
+  driverVehicleInfo(
+    fleetId: $fleetId
+    driverId: $driverId
+    vehicleNbr: $vehicleNbr
+  ) {
+    driver {
+      error
+      data {
+        statusCode
+        lname
+        fname
+        imageUrl
+      }
+      messages {
+        appMessage
+        userMessage
+      }
+    }
+    vehicle {
+      ... on VehicleInfoData {
+        vehicleNbr
+        fleetId
+        make
+        model
+        plate
+      }
+      ... on Errors {
+        errorCode
+        messages {
+          appMessage
+          userMessage
+        }
+      }
+    }
+  }
+}
+query GetEtas(
+  $tripStatus: String!
+  $vehLat: Float!
+  $vehLng: Float!
+  $pkupLat: Float
+  $pkupLng: Float
+  $destLat: Float!
+  $destLng: Float!
+) {
+  getEtas(
+    tripStatus: $tripStatus
+    vehLat: $vehLat
+    vehLng: $vehLng
+    pkupLat: $pkupLat
+    pkupLng: $pkupLng
+    destLat: $destLat
+    destLng: $destLng
+  ) {
+    ... on EtaData {
+      vehicleMinutes
+      rideMinutes
+    }
+    ... on Errors {
+      errorCode
+      messages {
+        appMessage
+        userMessage
+      }
+    }
+  }
+}
+query GetFleetPartners($zipCode: String) {
+  getFleetPartners(zipCode: $zipCode) {
+    ... on FleetList {
+      fleets {
+        zoneId
+        fleetId
+        name
+        description
+        fleetImageUrl
+      }
+    }
+    ... on Errors {
+      errorCode
+      messages {
+        appMessage
+        userMessage
+      }
+    }
+  }
+}

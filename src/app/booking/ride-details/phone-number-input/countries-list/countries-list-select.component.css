@@ -1,0 +1,21 @@
+.search-bar-container {
+    width: 100%;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+}
+
+.country-container {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    padding: 10px;
+}
+
+.country-name {
+    margin-left: 20px;
+}
+
+.dial-code {
+    margin-left: 10px;
+}

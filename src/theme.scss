@@ -1,0 +1,302 @@
+@import "~@angular/material/theming";
+@include mat-core();
+
+$light-primary: mat-palette($mat-grey, 800, 700, 900);
+$light-accent: mat-palette($mat-grey, A200, A100, A400);
+$light-warn: mat-palette($mat-red);
+$light-theme: mat-light-theme($light-primary, $light-accent, $light-warn);
+
+$dark-primary: mat-palette($mat-blue-grey);
+$dark-accent: mat-palette($mat-pink, A200, A100, A400);
+$dark-warn: mat-palette($mat-deep-orange);
+$dark-theme: mat-dark-theme($dark-primary, $dark-accent, $dark-warn);
+
+.light-theme {
+    @include angular-material-theme($light-theme);
+    #ride-details-container {
+        background-color: white;
+        color: #303234; //#1a1d21;
+        border: lightgray 3px solid;
+    }
+
+    .pickup {
+        background-color: #3f3f41;
+    }
+
+    .list-item:hover {
+        background-color: rgba(0, 0, 0, 0.12);
+    }
+
+    .vehicle-type-container {
+        border: 1px solid rgba(0, 0, 0, 0.12);
+    }
+
+    .map_showing_arrow {
+        color: #1d1d1d;
+    }
+    
+    @media screen and (max-width: 800px) {
+        #ride-details-container {
+            border: none;
+            border-top: lightgray 3px solid;
+        }
+    }
+
+        
+    .customized-input-form-field {
+        display: flex;
+        flex-direction: column;
+        margin: 1rem 0;
+    }
+
+    .custom-input-container {
+        display: flex;
+        // height: 48px;
+        border: 0.5px solid #868686;
+        border-radius: 4px;
+        padding: 12px 12px;
+
+        background: transparent;
+        color: black;
+        transition: border-color 0.3s ease-out 0.2s;
+    }
+
+    .custom-input-container input {
+        width: 100%;
+        height: 100%;
+        background: transparent;
+        color: black;
+        font-size: 16px;
+        border: none;
+        outline: none;
+    }
+
+    .custom-input-container:focus-within {
+        outline: none;
+        border: 2px solid black;
+        transition: border-color 0.3s ease-out;
+    }
+
+    .customized-input-form-field .redline {
+        border-color: #ff5722 !important;
+    }
+
+    .customized-input-form-field .error-message {
+        font-size: 14px;
+        color: #ff5722;
+        margin-top: 5px;
+    }
+
+    #country-select-container {
+        color: black;
+    }
+
+    .btn-change-period {
+        color: black;
+    }
+
+    .mat-datepicker-content-container {
+        background-color: white !important;
+    }
+
+    .time-form-field:hover {
+        border-color: black;
+    }
+
+    .btn-change-period:hover {
+        border-color: black;
+    }
+
+    .datepicker:hover {
+        border-color: black;
+    }
+
+    .mylocation-g {
+        fill: rgba(0, 0, 0, 0.87);
+    }
+
+    .mat-input-element {
+        caret-color: #426BF2 !important
+    }
+    
+    input {
+        caret-color: #426BF2 !important
+    }
+}
+
+// don't show mat-icon until font is loaded, unless using a different font set
+// :not(.material-icons-loaded) .mat-icon:not([fontSet]) {
+//     display: none;
+//   }
+
+.dark-theme {
+    @include angular-material-theme($dark-theme);
+    #ride-details-drag-container {
+        background-color: #303234; //#303234; //#1a1d21;
+    }
+    #ride-details-container {
+        background-color: #303234; //#303234; //#1a1d21;
+        color: white;
+        // remove border of widge ABS
+        // border: dimgray 3px solid;
+        box-shadow: 0 0 1px 0 rgba(0,0,0,0.12), 0 0 14px 0 rgba(0,0,0,16);
+    }
+
+    .pickup {
+        background-color: #F9E14A;
+    }
+
+    .list-item:hover {
+        background-color: #595656;
+    }
+
+    .vehicle-type-container {
+        border: 1px solid rgba(255, 255, 255, 0.3);
+    }
+
+    .mat-card {
+        background-color: #303234; //#1a1d21;
+    }
+
+    .mat-dialog-container {
+        background-color: #303234; //#1a1d21;
+    }
+
+    .dark-theme-background {
+        background-color: #303234; //#1a1d21;
+    }
+
+    .map_showing_arrow {
+        color: #C9C9C9;
+    }
+    
+    .mat-form-field-appearance-outline.mat-focused .mat-form-field-outline-thick {
+        color: white;
+    }
+
+    @media screen and (max-width: 800px) {
+        #ride-details-container {
+            border: none;
+            border-top: dimgray 3px solid;
+        }
+    }
+
+
+        
+    .customized-input-form-field {
+        display: flex;
+        flex-direction: column;
+        margin: 1rem 0;
+    }
+
+    .custom-input-container {
+        display: flex;
+        // height: 48px;
+        border: 0.5px solid #868686;
+        border-radius: 4px;
+        padding: 12px 12px;
+
+        background: transparent;
+        color: white;
+        transition: border-color 0.3s ease-out 0.2s;
+    }
+
+    .custom-input-container input {
+        width: 100%;
+        height: 100%;
+        background: transparent;
+        color: white;
+        font-size: 16px;
+        border: none;
+        outline: none;
+    }
+
+    .custom-input-container:focus-within {
+        outline: none;
+        border: 2px solid white;
+        transition: border-color 0.3s ease-out;
+    }
+
+    .customized-input-form-field .redline {
+        border-color: #ff5722 !important;
+    }
+
+    .customized-input-form-field .error-message {
+        font-size: 14px;
+        color: #ff5722;
+        margin-top: 5px;
+    }
+
+
+    #country-select-container {
+        color: white;
+    }
+
+    .btn-change-period {
+        color: white;
+    }
+    
+    .mat-datepicker-content-container {
+        background-color: #424242 !important;
+    }
+
+    
+    .time-form-field:hover {
+        border-color: white;
+    }
+    
+    .btn-change-period:hover {
+        border-color: white;
+    }
+
+    .datepicker:hover {
+        border-color: white;
+    }
+
+    
+    .mylocation-g {
+        fill: white;
+    }
+
+    .mat-input-element {
+        caret-color: #426BF2 !important
+    }
+
+    input {
+            caret-color: #426BF2 !important
+    }
+}
+
+// @import "~@angular/material/theming";
+// // Plus imports for other components in your app.
+
+// // Include the common styles for Angular Material. We include this here so that you only
+// // have to load a single css file for Angular Material in your app.
+// // Be sure that you only ever include this mixin once!
+// @include mat-core();
+
+// // Define the palettes for your theme using the Material Design palettes available in palette.scss
+// // (imported above). For each palette, you can optionally specify a default, lighter, and darker
+// // hue. Available color palettes: https://material.io/design/color/
+// $light-primary: mat-palette($mat-grey, 800, 700, 900);
+// $light-accent: mat-palette($mat-grey, A200, A100, A400);
+
+// // The warn palette is optional (defaults to red).
+// $light-warn: mat-palette($mat-red);
+
+// // Create the theme object. A theme consists of configurations for individual
+// // theming systems such as `color` or `typography`.
+// $light-theme: mat-light-theme(
+//     (
+//         color: (
+//             primary: $light-primary,
+//             accent: $light-accent,
+//             warn: $light-warn,
+//         ),
+//     )
+// );
+
+// // Include theme styles for core and each component used in your app.
+// // Alternatively, you can import and @include the theme mixins for each component
+// // that you are using.
+// @include angular-material-theme($light-theme);

@@ -1,0 +1,55 @@
+<div class="pck-container">
+    <div class="pck-header">
+        <button class="pck-header-btn" (click)="onTabBtn(1)" [ngStyle]="{'color': panel1 ? '#f41952' : '#ababab'}">
+            Schedule Ride
+        </button> |
+        <button class="pck-header-btn" (click)="onTabBtn(2)" [ngStyle]="{'color': panel2 ? '#f41952' : '#ababab'}">
+            Pickup Now
+        </button> |
+        <button class="pck-header-btn" (click)="onTabBtn(3)" [ngStyle]="{'color': panel3 ? '#f41952' : '#ababab'}">
+            Will Call
+        </button>
+    </div>
+    <div class="pck-content">
+        <div class="pck-tab-panel" id="pck-tab-panel-2" *ngIf="panel2">
+        </div>
+        <div class="pck-tab-panel" id="pck-tab-panel-1" *ngIf="panel1">
+            <app-date-time-selection (selectedDate)="onSelectedDate($event)"
+                [state]="'schedule'" [disabled]="isAirport"></app-date-time-selection>
+        </div>
+        <div class="pck-tab-panel" id="pck-tab-panel-3" *ngIf="panel3">
+            <app-date-select [state]="'willCall'" (selectedDate)="onSelectedDate($event)"></app-date-select>
+        </div>
+        <div class="returnTripRow">
+            <div class="returnTripBtn">
+                <img src="../../../../assets/icons/return-trip-button.svg" alt="return-trip-icon"
+                    class="return-trip-icon">
+                <span (click)="displayReturn()">Add Return Trip</span>
+            </div>
+            <div class="delivery" style="width: 53%;">
+                <mat-form-field>
+                    <mat-select class="custom-scrollbar" [(value)]="selected">
+                        <mat-option style="color: #FFF;" *ngFor="let deliveryItem of deliveryItems"
+                            (click)="onTripType(deliveryItem)" [value]="deliveryItem">{{ deliveryItem
+                            }}</mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </div>
+        </div>
+        <div class="pck-tab-panel" id="pck-tab-panel-1" *ngIf="returnTripState">
+            <app-date-time-selection [disabled]="willCallCheck" [state]="'returnTime'" (selectedDate)="onSelectedDate($event)"></app-date-time-selection>
+            <div class="phonenuminput" *ngIf="returnTripState"
+                style="display: flex; justify-content: space-between;align-items: baseline;margin: 0 auto;width: 100%;">
+                <div style="width: 50%;">
+                    <input style="margin-right: 5px;" id="phonecheck" name="phonecheck" type="checkbox"
+                        (change)="onchangeWillcall()">
+                    <label for="phonecheck">Will Call Return</label>
+                </div>
+                <!-- <app-phone-number-input></app-phone-number-input> -->
+                <input type="text" placeholder="Return Phone" [disabled]="!willCallCheck" (input)="onChangeWillCallPhone($event)"
+                    [ngStyle]="{'border-bottom': willCallCheck ? '1px solid white' : '1px solid gray'}"
+                    style="width: 50%;background-color: transparent;padding: 5px;margin-top: 16px;border: none;border-bottom: 1px solid #FFF;outline: transparent;color: #FFF;font-size: 16px;">
+            </div>
+        </div>
+    </div>
+</div>

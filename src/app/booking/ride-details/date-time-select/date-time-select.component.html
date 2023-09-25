@@ -1,0 +1,40 @@
+<div>
+    <div class="datetime-select-header">
+        <h5 style="cursor: pointer; font-size:16px; color: #ababab;" (click)="resetDateTime()">RESET</h5>
+        <h4 style=" font-size:18px; font-weight:100;margin: 0;">Schedule Ride</h4>
+        <h5 (click)="setDateTime()" style="color: #f41952; font-size:16px; cursor: pointer;margin: 0;">SAVE</h5>
+    </div>
+    <div class="pickupnow-content">
+        <app-date-time-selection style="width: 100%;" (selectedDate)="onSelectedDate($event)"></app-date-time-selection>
+    </div>
+    <div class="pickupnow-content" *ngIf="returnTripState">
+        <div
+            style="display: flex;align-items: center;justify-content: center;width: 131px;height: 37px;border: 1px solid #919191;border-radius: 5px;transition: border-color 0.3s ease-out 0.2s;cursor: pointer;position: relative;">
+            <button mat-icon-button type="button" (click)="picker.open()"
+                style="width: 30px; height: 30px; display: flex; align-items: center;">
+                <mat-icon style="font-size: 16px;">calendar_today</mat-icon>
+            </button>
+            <input matInput [matDatepicker]="picker" [(ngModel)]="pickupDate" [min]="currentDate" [max]="maxDate"
+                (ngModelChange)="modelChanged($event)" (click)="picker.open()" />
+            <label class="dateshow" (click)="picker.open()">{{formatedDate}}</label>
+            <mat-datepicker #picker [calendarHeaderComponent]="exampleHeader"></mat-datepicker>
+        </div>
+
+        <!-- <div style="display: flex; flex-direction: row" *ngIf="!isAirport">
+            <div class="time-form-field">
+                <mat-select [(ngModel)]="pickupTime.hours" class="custom-scrollbar">
+                    <mat-option *ngFor="let hourValue of HOURS" [value]="hourValue">{{ hourValue }}</mat-option>
+                </mat-select>
+            </div>
+            <span class="double-point">:</span>
+            <div class="time-form-field">
+                <mat-select [(ngModel)]="pickupTime.minutes">
+                    <mat-option *ngFor="let minuteValue of MINUTES" [value]="minuteValue">
+                        {{ formatTimeValue(minuteValue) }}</mat-option>
+                </mat-select>
+            </div>
+            <button class="btn-change-period" (click)="changePeriod()">
+                {{ pickupTime.period }}
+            </button>
+        </div> -->
+    </div>

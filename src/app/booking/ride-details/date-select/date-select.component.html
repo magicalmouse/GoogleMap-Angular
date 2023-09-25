@@ -1,0 +1,22 @@
+<div>
+    <div class="willcall-content">
+        <div
+            style="display: flex;align-items: center;justify-content: center;width: 131px;height: 37px;border: 1px solid #919191;border-radius: 5px;transition: border-color 0.3s ease-out 0.2s;cursor: pointer;position: relative;">
+            <button mat-icon-button type="button" (click)="datepicker.open()"
+                style="width: 30px; height: 30px; display: flex; align-items: center;" class="datepicker">
+                <mat-icon>calendar_today</mat-icon>
+            </button>
+
+            <input matInput [matDatepicker]=" datepicker" style="width: 0%;" [min]="currentDate" [max]="maxDate"
+                (ngModelChange)="modelChanged($event)" (click)="datepicker.open()"
+                (dateInput)="onDateSelected($event)" />
+            <label class="dateshow" (click)="datepicker.open()" style="cursor: pointer;">{{formatedDate}}</label>
+            <mat-datepicker #datepicker [calendarHeaderComponent]="exampleHeader"></mat-datepicker>
+        </div>
+    </div>
+
+    <div *ngIf="warningLessThan45">
+        <div style="margin-bottom:0; font-size: 14px; color: #ff5722; text-align: center; margin-top: 12px;">Must be at
+            least 45 mins from now</div>
+    </div>
+</div>

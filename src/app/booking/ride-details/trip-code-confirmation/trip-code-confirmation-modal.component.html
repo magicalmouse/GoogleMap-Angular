@@ -1,0 +1,28 @@
+<mat-icon class="dialog-close-icon" [mat-dialog-close]="false">close</mat-icon>
+<h1 mat-dialog-title style="text-align: center;">Want a trip code for this ride?</h1>
+<div mat-dialog-content class="content-dialog">
+    <div style=" display: flex; justify-content:center;">
+        <img class="img-guide-description" style="width: 90px;" src="https://i.postimg.cc/s2LKrbfk/New-Project.png"/>
+    </div>
+
+    <h3 style="text-align: center; text-decoration: none;
+   margin: 0; font-weight: 100; font-size: 16px; margin-top: 15px;
+    ">Trip codes let you get an upfront price for your ride before you hail a cab at airports, hotels, etc. Instead of the driver running the meter.</h3>
+
+<h3 style="text-decoration: underline; text-align: center;">How It Works</h3>
+    <ol style="padding: 15px;">
+        <li>Press 'Create Trip Code'(below) to get a code for the ride you just setup.</li>
+        <li style="margin-top: 10px;"> Whenever you're ready to ride, walk to the taxi line at your airport, hotel, etc.</li>
+        <li style="margin-top: 10px;">
+            Hop into a cab from one of our <a href="https://rideyellow.com/fleets" target="_blank" style="color: rgb(255, 248, 45); text-decoration: underline;">partner fleets</a>, show the code to your driver, and be on your way!
+        </li>
+    </ol>
+</div>
+<div mat-dialog-actions class="action-buttons">
+    <button mat-button mat-stroked-button [mat-dialog-close]="false"  style="height: 48px;border: 1px solid; font-size: 1.1rem; font-weight: 600; border-radius: 7px;">
+        Go Back
+    </button>
+    <button mat-button mat-stroked-button [mat-dialog-close]="true"  style="height: 48px;border: none; background-color: rgb(244, 25, 82); font-size: 1.1rem; font-weight: 600; border-radius: 7px;">
+        Create Trip Code
+    </button>
+</div>

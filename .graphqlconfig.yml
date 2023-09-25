@@ -1,0 +1,18 @@
+projects:
+  Rideyellow_test:
+    schemaPath: src/graphql/schema.json
+    includes:
+      - src/graphql/**/*.graphql
+    excludes:
+      - ./amplify/**
+    extensions:
+      amplify:
+        codeGenTarget: angular
+        generatedFileName: src/app/API.service.ts
+        docsFilePath: src/graphql
+        region: us-east-2
+        apiId: jes43qomgnfwtedibhiivvktie
+        maxDepth: 10
+extensions:
+  amplify:
+    version: 3

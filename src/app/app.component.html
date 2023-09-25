@@ -1,0 +1,4 @@
+    <div id="main-wrapper" *ngIf="!gettingSession && !isLoggedIn">
+        <app-login (onLogin)="onLogin($event)"></app-login>
+    </div>
+    <app-booking [custId]="custId" [name]="name" [username]="username" *ngIf="gettingSession && isLoggedIn"></app-booking>

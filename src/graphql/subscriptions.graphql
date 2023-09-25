@@ -1,0 +1,159 @@
+# this is an auto generated file. This will be overwritten
+subscription OnDeleteCard($method: String!, $uid: String!) {
+  onDeleteCard(method: $method, uid: $uid) {
+    uid
+    method
+    error
+    data {
+      error
+      statusCode
+      card_id
+    }
+    messages {
+      appMessage
+      userMessage
+    }
+  }
+}
+subscription OnPaymentAdd($method: String!, $uid: String!) {
+  onPaymentAdd(method: $method, uid: $uid) {
+    uid
+    method
+    error
+    data {
+      error
+      statusCode
+      cards {
+        id
+        last_4
+        exp_year
+        exp_month
+        card_brand
+        billing_address {
+          postal_code
+        }
+        isProfile
+        email
+        profile_type
+      }
+    }
+    messages {
+      appMessage
+      userMessage
+    }
+  }
+}
+subscription OnUpdateVehicleStatus($vehicleId: String) {
+  onUpdateVehicleStatus(vehicleId: $vehicleId) {
+    vehicleId
+    driverId
+    gpsDirection
+    lat
+    lng
+    locationTimeStamp
+    postedStatus
+    tripStatus
+    currentMeterFare
+    currentMeterTotalDist
+    meterRate1Set
+    meterRate2Set
+  }
+}
+subscription OnUpdateTripStatus($zoneId: String!, $tripNbr: Int!) {
+  onUpdateTripStatus(zoneId: $zoneId, tripNbr: $tripNbr) {
+    tripNbr
+    zoneId
+    fleetId
+    userId
+    comment
+    pkupDate
+    pkupStreet
+    pkupApt
+    pkupCity
+    pkupState
+    pkupZip
+    pkupLat
+    pkupLng
+    destStreet
+    destApt
+    destCity
+    destState
+    destZip
+    destLat
+    destLng
+    nbrPass
+    tripRate
+    distance
+    timeEstimate
+    isNow
+    couponId
+    source
+    vehicleType
+    pickupTime
+    paymentId
+    paymentMethod
+    tip
+    tipType
+    tripMinutes
+    tripStatus {
+      appMessage
+      userMessage
+    }
+    status
+    statusTime
+    vehicleNbr
+    driverId
+    finalFare
+    ratingStatus
+    tipStatus
+  }
+}
+subscription OnUpdateUserTrip($userId: String!) {
+  onUpdateUserTrip(userId: $userId) {
+    tripNbr
+    zoneId
+    fleetId
+    userId
+    comment
+    pkupDate
+    pkupStreet
+    pkupApt
+    pkupCity
+    pkupState
+    pkupZip
+    pkupLat
+    pkupLng
+    destStreet
+    destApt
+    destCity
+    destState
+    destZip
+    destLat
+    destLng
+    nbrPass
+    tripRate
+    distance
+    timeEstimate
+    isNow
+    couponId
+    source
+    vehicleType
+    pickupTime
+    paymentId
+    paymentMethod
+    tip
+    tipType
+    tripMinutes
+    tripStatus {
+      appMessage
+      userMessage
+    }
+    status
+    statusTime
+    vehicleNbr
+    driverId
+    finalFare
+    ratingStatus
+    tipStatus
+  }
+}

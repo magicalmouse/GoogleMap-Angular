@@ -1,0 +1,115 @@
+#map {
+    height: 100vh;
+    width: 100vw;
+}
+
+.info-bubble {
+    background-color: white;
+    padding: 10px;
+    color: black;
+    display: inline-block;
+    border-radius: 15%;
+}
+
+.info-bubble-tail {
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-top: 10px solid white;
+    margin: 0 auto;
+}
+
+.info-bubble-title {
+    text-align: center;
+    font-size: 0.8rem;
+    color: gray;
+}
+.info-bubble-subtitle {
+    text-align: center;
+    font-size: 0.9rem;
+}
+
+.location-marker {
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    border-width: 3px;
+    border-color: white;
+    border-style: solid;
+}
+
+#user-location-marker {
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background-color: #1288d6;
+    border-width: 2px;
+    border-color: white;
+    border-style: solid;
+    margin: -10px 0 0 -10px;
+}
+
+#user-location-marker-shadow {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: #1288d6;
+    opacity: 50%;
+    margin: -25px 0 0 -25px;
+}
+
+.vehicle-marker-container {
+    margin: -1rem 0 0 -1rem;
+}
+.vehicle-marker {
+    width: 2rem;
+    height: 2rem;
+    background: url("/assets/icons/cab-marker.png") no-repeat center center;
+    background-size: contain;
+}
+
+/* @media screen and (max-width: 900px) {
+    #map {
+        width: 100vw;
+        height: 50vh;
+    }
+
+    .H_imprint {
+        z-index: unset !important;
+    }
+
+    .H_ui {
+        z-index: unset !important;
+    }
+} */
+
+/* @media screen and (max-width: 450px) {
+    #map {
+        width: 100vw;
+        height: 50vh;
+    }
+
+    .H_imprint {
+        z-index: unset !important;
+    }
+
+    .H_ui {
+        z-index: unset !important;
+    }
+} */
+
+@media screen and (max-width: 800px) {
+    #map {
+        width: 100vw;
+        height: 350px;
+    }
+
+    .H_imprint {
+        z-index: unset !important;
+    }
+
+    .H_ui {
+        z-index: unset !important;
+    }
+}

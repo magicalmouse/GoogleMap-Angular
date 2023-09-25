@@ -1,0 +1,80 @@
+.login-center {
+    display: flex;
+    height: 100vh;
+    width: 100vw;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-container {
+    width: 450px;
+}
+
+.mat-card-title {
+    font-size: 16px;
+}
+
+.field {
+    border-bottom: 1px solid rgb(24, 24, 24);
+}
+
+.form-label {
+    display: block;
+    font-size: 12px;
+}
+
+.form-input {
+    padding: 5px;
+    font-size: 16px;
+    width: 95%;
+    border: none;
+    border-bottom: 1px solid rgb(24, 24, 24);
+    outline: none;
+    margin-bottom: 20px;
+    margin-top: 10px;
+    transition: all 0.3s ease-in-out;
+    float: right;
+}
+
+.form-input:focus {
+    border-bottom: 1px solid #3A86FF;
+}
+
+.mat-progress-spinner {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-left: -50px;
+    margin-top: -50px;
+}
+
+#login-box-header {
+    height: 120px; 
+    color: #ffffff; 
+    background-color: #3A86FF;
+}
+
+#login-box-header-title {
+    font-size: 32px; 
+    padding: 72px 0px 0px 48px;
+}
+
+#content-wrapper {
+    padding: 24px 48px 48px 48px;
+}
+
+#login-button {
+    width: 80px;
+    background-color: #3A86FF;
+    float: right;
+    margin-right: 20px;
+    margin-bottom: 40px;
+}
+
+/* input {
+    margin-top: 1.25em;
+} */
+
+/* ::ng-deep .mat-form-field-appearance-fill .mat-form-field-infix {
+    padding: 1.25em 0 .75em 0 !important;
+} */

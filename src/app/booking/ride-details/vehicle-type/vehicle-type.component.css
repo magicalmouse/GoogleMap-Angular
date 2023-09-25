@@ -1,0 +1,31 @@
+.vehicle-type-container {
+    padding: 10px;
+    /* border: 1px solid rgba(255, 255, 255, 0.3); */
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.type-and-fare-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: top;
+}
+
+.vehicle-type {
+    display: flex;
+    align-items: center;
+}
+
+.vehicle-type>img {
+    height: 2rem;
+    margin-right: 10px;
+}
+
+.discounted-fare {
+    text-decoration: line-through;
+    font-size: 14px;
+}
+
+.eta-and-description-container {
+    font-size: 14px;
+}

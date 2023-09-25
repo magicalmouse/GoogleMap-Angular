@@ -1,0 +1,51 @@
+.pck-header {
+    display: flex;
+    justify-content: space-between;
+}
+
+.pck-header-btn {
+    background-color: transparent;
+    color: white;
+    font-size: 17px;
+    border: none;
+    cursor: pointer;
+    transition: 0.2s all ease-in-out;
+    padding: 0;
+}
+
+.pck-header-btn:hover {
+    color: rgb(164, 164, 164);
+}
+
+.returnTripBtn {
+    margin-top: 20px;
+    margin-bottom: -10px;
+    margin-left: -13px;
+    cursor: pointer;
+    font-style: italic;
+    font-size: 13px;
+    display: inline-block;
+}
+
+.return-trip-icon {
+    vertical-align: bottom;
+    margin-right: 5px;
+    width: 15px;
+}
+
+.returnTripBtn-disabled {
+    margin-top: 25px;
+    display: flex;
+    justify-content: flex-start;
+    cursor: pointer;
+    font-style: italic;
+    font-size: 13px;
+    margin-bottom: -25px;
+}
+
+.returnTripRow {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: -20px;
+}

@@ -1,0 +1,46 @@
+<!-- <mat-form-field appearance="outline" class="form-field">
+    <div id="country-select-container" (click)="openCountriesListSelectModal()">
+        <div class="flags" [ngClass]="'flag_' + selectedCountry.abbrev"></div>
+        <mat-icon id="expand-more-icon">expand_more</mat-icon>
+        <div>+{{ selectedCountry.dialCode }}</div>
+    </div>
+    <input
+        matInput
+        placeholder="Phone Number*"
+        autocomplete="off"
+        required
+        [formControl]="phoneNumberFormControl"
+        (keyup)="formatPhoneNumber()"
+    />
+
+    <mat-error *ngIf="phoneNumberFormControl.hasError('required')"
+        >Phone Number is required</mat-error
+    >
+    <mat-error *ngIf="phoneNumberFormControl.hasError('invalid')"
+        >Phone Number is invalid for this region.</mat-error
+    >
+</mat-form-field> -->
+
+
+<div appearance="outline" class="customized-input-form-field">
+    <div class="custom-input-container" [ngClass]="{
+            'redline':
+            !focusPhone &&
+            (( (phoneNumberFormControl.hasError('required') && requiredPhoneNumber) || (phoneNumberFormControl.hasError('invalid')) || invalidPhoneNumber) )
+        }">
+        <div id="country-select-container" (click)="openCountriesListSelectModal()">
+            <div class="flags" [ngClass]="'flag_' + selectedCountry.abbrev"></div>
+            <mat-icon id="expand-more-icon">expand_more</mat-icon>
+            <span>+{{ selectedCountry.dialCode }}</span>
+        </div>
+        <input matInput placeholder="Phone Number*" autocomplete="off" required [formControl]="phoneNumberFormControl"
+            (keyup)="formatPhoneNumber()" (focus)="onFocusInput($event,'phone')"
+            (focusout)="onFocusInputOut($event, 'phone')" inputmode="numeric" pattern="[0-9]*" />
+    </div>
+    <!-- <div class="error-message" *ngIf="requiredPhoneNumber">Phone Number is required</div> -->
+    <!-- <div class="error-message" *ngIf="invalidPhoneNumber">Phone Number is invalid for this region.</div> -->
+    <div class="error-message"
+        *ngIf="!focusPhone && phoneNumberFormControl.hasError('required') && requiredPhoneNumber">Valid phone number is
+        required</div>
+    <div class="error-message" *ngIf="!focusPhone &&  phoneNumberFormControl.hasError('invalid')">Phone Number is required</div>
+</div>

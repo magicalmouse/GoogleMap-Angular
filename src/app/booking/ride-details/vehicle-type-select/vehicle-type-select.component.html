@@ -1,0 +1,16 @@
+<mat-icon class="dialog-close-icon" (click)="close()">close</mat-icon>
+<h1 mat-dialog-title>Vehicle Options</h1>
+<div mat-dialog-content class="selectable-vehicle-types">
+    <div *ngFor="let vehicleType of vehicleTypes">
+        <div class="vehicle-type-container" *ngIf="vehicleType.exist == 1">
+            <app-vehicle-type
+                [type]="vehicleType.type"
+                [isOption]="true"
+                [displayFare]="displayFare"
+                [eta]="vehicleType.eta"
+                [isNow]="isNow"
+                (click)="selectVehicleType(vehicleType)"
+            ></app-vehicle-type>
+        </div>
+    </div>
+</div>

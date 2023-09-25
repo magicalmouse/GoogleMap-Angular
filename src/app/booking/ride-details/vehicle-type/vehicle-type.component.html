@@ -1,0 +1,68 @@
+<div class="vehicle-type-container">
+    <div class="type-and-fare-container">
+        <div class="vehicle-type" style="width: 100%">
+            <img src="assets/icons/{{ VEHICLE_TYPES[type].icon }}" />
+            <div>
+                <div style="font-weight: bold" [ngStyle]="{'font-size': isMobile ? '14px' : '16px'}">
+                    {{ VEHICLE_TYPES[type].displayName }}
+                    <mat-icon *ngIf="!isOption && getCountExist() > 1" [ngStyle]="{'font-size': isMobile ? '14px' : '16px'}"
+                     style="
+                            width: 16px;
+                            height: 16px;
+                            vertical-align: bottom;
+                        ">expand_more</mat-icon>
+                </div>
+                <div style="color: #c0c0c0" [ngStyle]="{'font-size': isMobile ? '13px' : '14px'}">
+                    {{ VEHICLE_TYPES[type].numberOfSeats }}
+                </div>
+            </div>
+        </div>
+        <div *ngIf="displayFare != null && !(!isOption && tripDetailsService.showFareSpinner)"
+            style="text-align: right;" [ngStyle]="{'width': isMobile ? '35%' : '60%'}">
+            <ng-container *ngIf="displayFare.error == null && displayFare.displayFare !== ''">
+                <!-- <ng-container *ngIf="fare.discountedFare != null">
+                    <div style="font-weight: bold; font-size: 16px">
+                        ${{ fare.discountedFare.toFixed(2) }}
+                    </div>
+                    <div
+                        style="color: gray; text-align: right"
+                        class="discounted-fare"
+                    >
+                        ${{ fare.fare.toFixed(2) }}
+                    </div>
+                </ng-container>
+                <ng-container *ngIf="fare.discountedFare == null">
+                    <div style="font-weight: bold; font-size: 16px">
+                        ${{ fare.fare.toFixed(2) }}
+                    </div>
+                </ng-container> -->
+                <!-- ASE -->
+                <ng-container>
+                    <div [ngStyle]="{'font-size': isMobile ? '15px' : '16px'}">
+                        {{ convertFare(displayFare.displayFare) }}
+                    </div>
+                </ng-container>
+                <div *ngIf="!isOption && !isAirport && sharedservice.isNow">
+                    <div style="color: #C0C0C0;" [ngStyle]="{'font-size': isMobile ? '13px' : '14px'}">{{ formatEta(type, eta) }}</div>
+                </div>
+            </ng-container>
+            <ng-container *ngIf="!isOption && displayFare.error != null">
+                <mat-icon (click)="getFare()" style="
+                        font-size: 30px;
+                        height: auto;
+                        width: auto;
+                        cursor: pointer;
+                    ">refresh</mat-icon>
+            </ng-container>
+        </div>
+        <!-- <mat-spinner
+            diameter="40"
+            *ngIf="!isOption && tripDetailsService.showFareSpinner"
+            ></mat-spinner> -->
+        <app-loader *ngIf="!isOption && tripDetailsService.showFareSpinner" style="align-self: center;"></app-loader>
+    </div>
+    <div *ngIf="isOption" class="eta-and-description-container" style="display: flex; justify-content: space-between; align-items: baseline;margin-top: 10px;" [ngStyle]="{'font-size': isMobile ? '12px' : '14px'}">
+        <div>{{ VEHICLE_TYPES[type].desc }}</div>
+        <div *ngIf="!isAirport && sharedservice.isNow" style="color: #C0C0C0;" [ngStyle]="{'font-size': isMobile ? '13px' : '14px'}">{{ formatEta(type, eta) }}</div>
+    </div>
+</div>

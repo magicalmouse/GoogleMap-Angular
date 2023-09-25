@@ -1,0 +1,32 @@
+<mat-icon class="dialog-close-icon" (click)="close()">close</mat-icon>
+<div
+    style="
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+        max-height: 65vh;
+        padding: 0px;
+    "
+>
+    <div class="dark-theme-background search-bar-container">
+        <mat-form-field appearance="outline" class="form-field">
+            <input
+                matInput
+                placeholder="Search"
+                autocomplete="off"
+                (keyup)="searchCountry($event)"
+            />
+        </mat-form-field>
+    </div>
+    <div style="overflow-y: auto">
+        <div
+            *ngFor="let country of countries"
+            (click)="selectCountry(country)"
+            class="country-container list-item"
+        >
+            <div class="flags" [ngClass]="'flag_' + country.abbrev"></div>
+            <div class="country-name">{{ country.name }}</div>
+            <div class="dial-code">+{{ country.dialCode }}</div>
+        </div>
+    </div>
+</div>

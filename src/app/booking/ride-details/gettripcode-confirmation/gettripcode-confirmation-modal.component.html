@@ -1,0 +1,32 @@
+<mat-icon class="dialog-close-icon" [mat-dialog-close]="false">close</mat-icon>
+<h1 mat-dialog-title style="text-align: center;">Trip Code</h1>
+<div mat-dialog-content>
+    <h3 *ngIf='returnTripCode' style="text-align: center; text-decoration: none;
+    letter-spacing: 17px; font-size: 28px; margin: 0; color: yellow;
+    "><span style="color: #e7e7e7;letter-spacing: 1px;font-size: 20px;">Outbound Trip Code : </span>{{tripCode}}</h3>
+    <h3 *ngIf='returnTripCode' style="text-align: center; text-decoration: none; 
+    letter-spacing: 17px; font-size: 28px; margin: 0; color: yellow;
+    "><span style="color: #e7e7e7;letter-spacing: 2.6px;font-size: 20px;">Return Trip Code : </span>{{returnTripCode}}</h3>
+    <h3 *ngIf='!returnTripCode' style="text-align: center; text-decoration: none; 
+        letter-spacing: 17px; font-size: 28px; margin: 0; color: yellow;
+        "><span style="color: #e7e7e7;letter-spacing: 2.6px;font-size: 20px;">Trip Code : </span>{{tripCode}}
+    </h3>
+    <!-- <h3 style="text-align: center; text-decoration: none;
+    letter-spacing: 17px; font-size: 28px; margin: 0; color: yellow;
+    "></h3> -->
+
+    <h3 style="text-decoration: underline;">How to Redeem</h3>
+    <ol style="padding: 15px;">
+        <li>Walk to the taxi line at your airport, hotel, etc</li>
+        <li>
+            Hop into a cab from one of our partner fleets, show the code to your driver, and be on your way!
+        </li>
+    </ol>
+
+    <h4><i>Heads up! </i>&nbsp; If you start your ride from a different pickup location. <u>we will automatically adjust the price</u> of your ride.</h4>
+</div>
+<div mat-dialog-actions class="action-buttons">
+    <button mat-button mat-stroked-button [mat-dialog-close]="true" (click)="cancelRide()">
+        Cancel Ride
+    </button>
+</div>

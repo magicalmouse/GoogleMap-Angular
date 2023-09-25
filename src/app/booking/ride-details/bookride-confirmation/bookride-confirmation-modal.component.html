@@ -1,0 +1,87 @@
+<!-- <mat-icon class="dialog-close-icon" [mat-dialog-close]="false">close</mat-icon> -->
+<h1 [ngStyle]="{'font-size':isMobile ? '18pt':'28pt'}" mat-dialog-title style="text-align: center;font-family: semi;font-weight: bold;margin-top: 30px;"><img [ngStyle]="{'width': isMobile ? '20px':'30px'}" style="margin-right: 10px;vertical-align: middle;" src="../../../../assets/icons/check-mark-round.png" alt="check">Booking Confirmed!</h1>
+<p [ngStyle]="{'font-size':isMobile ? '12pt':'25pt'}" style="font-family: Regular;text-align: center;">An email confirmation is on it's way</p>
+<p [ngStyle]="{'font-size':isMobile ? '12pt':'25pt'}" style="font-family: Regular;text-align: center;">Ride is scheduled for {{callDate}}</p>
+<div mat-dialog-content>
+    <!-- <h3 style="text-align: center; text-decoration: none;
+   margin: 0;">Your taxi is scheduled for: will call on {{callDate}}</h3> -->
+    <div style="border: 1px solid rgb(72 74 76);"></div>
+    <h4 *ngIf="isReturn" [ngStyle]="{'font-size':isMobile ? '16pt':'28pt'}" style="text-align: center;font-family: semi;font-weight: bold;margin-top: 1em;">Outbound Trip</h4>
+    <h4 *ngIf="!isReturn" [ngStyle]="{'font-size':isMobile ? '16pt':'28pt'}" style="text-align: center;font-family: semi;font-weight: bold;margin-top: 1em;">Your Trip({{displayFare}})</h4>
+
+    <div>
+        <div>
+            <div [ngStyle]="{'font-size': isMobile ? '10pt' : '22pt'}" style="display: flex;padding: 5px 0;">
+                <div style="color: rgb(167, 167, 167);">Pickup:</div> 
+                <div style="margin-left: 3px;">{{pickup}}</div>
+            </div>
+            <div [ngStyle]="{'font-size': isMobile ? '10pt' : '22pt'}" style="display: flex;padding: 5px 0">
+                <div style="color: rgb(167, 167, 167);">Destination:</div> 
+                <div style="margin-left: 3px;"> {{destination}}</div>
+            </div>
+            <div [ngStyle]="{'font-size': isMobile ? '10pt' : '22pt'}" style="display: flex;padding: 5px 0">
+                <div style="color: rgb(167, 167, 167);">Passenger Name:</div> 
+                <div style="margin-left: 3px;"> {{passengerName}}</div>
+            </div>
+            <div [ngStyle]="{'font-size': isMobile ? '10pt' : '22pt'}" style="display: flex;padding: 5px 0">
+                <div style="color: rgb(167, 167, 167);">Phone Number:</div> 
+                <div style="margin-left: 3px;"> {{companyPhone}}</div>
+            </div>
+            <div [ngStyle]="{'font-size': isMobile ? '10pt' : '22pt'}" style="display: flex;padding: 5px 0">
+                <div style="color: rgb(167, 167, 167);">Note:</div>
+                <div style="margin-left: 3px;"> {{comment}}</div>
+            </div>
+            <div [ngStyle]="{'font-size': isMobile ? '10pt' : '22pt'}" style="display: flex;padding: 5px 0">
+                <div style="color: rgb(167, 167, 167);">Trip #:</div> 
+                <div style="margin-left: 3px;"> {{confirmationCode}}</div>
+            </div>
+            <div [ngStyle]="{'font-size': isMobile ? '10pt' : '22pt'}" style="display: flex;padding: 5px 0">
+                <div style="color: rgb(167, 167, 167);">Fleet:</div> 
+                <div style="margin-left: 3px;">ASC<span style="margin-left: 3px;">{{fleet}}</span></div>
+            </div>
+            
+        </div>
+    </div>
+    <div *ngIf="isReturn">
+        <h3 style="text-decoration: underline;">Return Trip</h3>
+        <div>
+            <div>
+                <div [ngStyle]="{'font-size': isMobile ? '10pt' : '22pt'}" style="display: flex;padding: 5px 0">
+                    <div>Pickup:</div>
+                    <div style="margin-left: 3px;"> {{pickup}}</div>
+                </div>
+                <div [ngStyle]="{'font-size': isMobile ? '10pt' : '22pt'}" style="display: flex;padding: 5px 0">
+                    <div>Destination:</div>
+                    <div style="margin-left: 3px;"> {{returnDestination}}</div>
+                </div>
+                <div [ngStyle]="{'font-size': isMobile ? '10pt' : '22pt'}" style="display: flex;padding: 5px 0">
+                    <div>Passenger Name:</div>
+                    <div style="margin-left: 3px;"> {{returnPassengerName}}</div>
+                </div>
+                <div [ngStyle]="{'font-size': isMobile ? '10pt' : '22pt'}" style="display: flex;padding: 5px 0">
+                    <div>Phone Number:</div>
+                    <div style="margin-left: 3px;"> {{returnCompanyPhone}}</div>
+                </div>
+        
+                <div [ngStyle]="{'font-size': isMobile ? '10pt' : '22pt'}" style="display: flex;padding: 5px 0">
+                    <div>Confirmation #:</div>
+                    <div style="margin-left: 3px;">{{returnConfirmationCode}}</div>
+                </div>
+                <div [ngStyle]="{'font-size': isMobile ? '10pt' : '22pt'}" style="display: flex;padding: 5px 0">
+                    <div>Fleet:</div>
+                    <div style="margin-left: 3px;">ASC<span style="margin-left: 3px;">{{fleet}}</span></div>
+                </div>
+        
+            </div>
+        </div>
+    </div>
+
+</div>
+<div mat-dialog-actions class="action-buttons">
+    <!-- <button mat-button mat-stroked-button [mat-dialog-close]="true" (click)="cancelRide()">
+        Cancel Ride
+    </button> -->
+    <button [ngStyle]="{'font-size':isMobile ? '15px' : '25px', 'padding': isMobile?'0 20px':'15px 60px', 'margin-top':isMobile?'20px':'40px'}" style="background-color: #FFF;color: #000;margin-bottom: 30px" mat-button mat-stroked-button [mat-dialog-close]="true">
+        Done
+    </button>
+</div>

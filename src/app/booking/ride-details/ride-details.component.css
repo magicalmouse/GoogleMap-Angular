@@ -1,0 +1,714 @@
+::ng-deep .mat-form-field-wrapper {
+    padding-bottom: 1em !important;
+}
+
+::ng-deep .mat-form-field-infix {
+    border-top: none;
+}
+
+::ng-deep .mat-select {
+    line-height: 1;
+}
+
+::ng-deep .mat-form-field-suffix {
+    top: unset !important;
+}
+
+::ng-deep .mat-card-header-text {
+    margin: 0 !important;
+}
+
+.form-field {
+    width: 100%;
+    /* font-size: 1rem; */
+}
+
+#drag-handle {
+    height: fit-content;
+    width: 100%;
+    /* padding-top: 10px; */
+    padding-bottom: 10px;
+}
+
+.map_showing_arrow {
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 16px;
+    width: fit-content;
+}
+
+.map_showing_arrow .icon {
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.clear-icon {
+    font-family: "Material Icons" !important;
+    font-weight: normal;
+    font-style: normal;
+    font-size: 0.7rem;
+    background-color: lightgray;
+    color: white;
+    border-radius: 50%;
+    padding: 2px;
+}
+
+.suggestion-container {
+    width: 100%;
+    display: flex;
+    overflow: hidden;
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+    cursor: pointer;
+}
+
+.address-suggestion-list {
+    background-color: #303234;
+}
+
+.address-suggestion-list-item:hover {
+    background-color: #595656;
+}
+
+.suggestion-title {
+    font-size: 1.2rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.suggestion-detail {
+    font-size: 0.9rem;
+    color: gray;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.suggestion-icon-container {
+    width: 2rem;
+    /* margin-right: 10px; */
+    height: 2rem;
+    align-self: center;
+}
+
+.suggestion-icon {
+    width: 98%;
+    height: 98%;
+    border-radius: 50%;
+    background-image: url("/assets/icons/address-suggestion-icon.png");
+    background-size: 50%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.dropoff {
+    background-color: #f41952;
+}
+
+.dot {
+    border-radius: 50%;
+    width: 0.5em;
+    height: 0.5em;
+    margin: 0 auto;
+}
+
+#ride-details-container {
+    /* margin: 0 auto; */
+    position: fixed;
+    top: 2vh;
+    left: 2vh;
+    /* height: 85vh; */
+    /* max-height: 85vh; */
+    /* padding-bottom: 16px; */
+    z-index: 1000;
+    /* min-height: 70vh; */
+    min-height: 70vh;
+    max-height: 90vh;
+    overflow-y: auto;
+    overflow: hidden;
+    border-radius: 5px;
+}
+
+#ride-details {
+    padding: 0 26px;
+    font-size: 16px;
+    /* cursor: pointer; */
+}
+
+.time-form-field {
+    text-align: center;
+    width: 15%;
+}
+
+#cab-and-fare-container {
+    width: 100%;
+    background-color: #303234;
+}
+
+.left-part {
+    margin-right: 20px;
+    width: 350px;
+}
+
+.left-box {
+    min-width: 400px;
+    position: fixed;
+    top: 2vh;
+    left: 2vh;
+    z-index: 1000;
+    min-height: 70vh;
+    max-height: 90vh;
+    overflow: hidden;
+    border-radius: 5px;
+}
+
+.right-box {
+    min-width: 350px;
+    position: fixed;
+    top: 44vh;
+    left: 430px;
+    z-index: 1000;
+    overflow: auto;
+    border-radius: 5px;
+    background-color: #303234;
+    padding: 20px;
+    display: none;
+}
+
+#cash-icon {
+    height: 1.1rem;
+    margin-top: -4px;
+    margin-right: -5px;
+}
+
+#pickup-and-payment-method-container {
+    display: flex;
+    margin-top: 20px;
+    margin-bottom: 15px;
+    justify-content: center;
+    width: 100%;
+    padding: 0 5px;
+    box-sizing: border-box;
+    align-items: flex-start;
+}
+
+#pickup-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 95%;
+}
+
+#change-pickup-button {
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+#pickup-access-time-icon {
+    font-size: 16px;
+    width: 16px;
+    height: 16px;
+    margin-right: 5px;
+}
+
+#pickup-expand-more-icon {
+    font-size: 16px;
+    width: 16px;
+    height: 16px;
+    margin-left: 5px;
+    /* margin-top: 5px; */
+}
+
+#pickup-event-icon {
+    font-size: 18px;
+    width: 18px;
+    height: 18px;
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+#payment-method-container {
+    display: flex;
+    align-items: center;
+    align-self: flex-start;
+    width: 37%;
+    justify-content: flex-end;
+}
+
+#payment-method {
+    margin-left: 10px;
+}
+
+#passenger-details-form {
+    overflow: auto;
+}
+
+.passenger-details-form-height {
+    height: 272px;
+}
+
+#create-trip-buttons {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    /* padding: 16px; */
+    padding-top: 0px;
+    gap: 1%;
+}
+
+.create-trip-button-cash {
+    padding-top: 30px;
+}
+
+#create-trip-buttons button {
+    padding: 0;
+    font-size: 1rem;
+}
+
+#request-ride-button {
+    background-color: #f41952;
+    color: white;
+    font-weight: 600;
+    width: 53%;
+    height: 47px;
+}
+
+
+#request-ride-button.schedule-ride div {
+    line-height: 1.2rem;
+}
+
+#request-ride-button.schedule-ride .schedule-button-date {
+    font-size: 0.83rem;
+    font-weight: 100;
+}
+
+#walk-up-trip-code-button .trip-button-date {
+    font-size: 0.83rem;
+    font-weight: 100;
+}
+
+#walk-up-trip-code-button.trip-button div {
+    line-height: 1.2rem;
+}
+
+#request-ride-button:disabled {
+    opacity: 0.5;
+}
+
+#account-answer-trip {
+    background-color: #f41952;
+    color: white;
+    /* padding: 5px; */
+    font-size: 1.1rem;
+    font-weight: 600;
+    height: 47px;
+    width: 100%;
+}
+
+#account-answer-trip:disabled {
+    opacity: 0.5;
+}
+
+#account-answer-trip-content-container {
+    display: flex;
+    padding-top: 2.5px;
+    padding-bottom: 2.5px;
+}
+
+#account-answer-trip-content {
+    display: flex;
+    flex-direction: column;
+    font-size: 0.7rem;
+    border-right: 1px solid gray;
+    padding-right: 5px;
+}
+
+#account-answer-trip-content>div {
+    /* line-height: 20px; */
+    line-height: 1rem;
+}
+
+#walk-up-trip-code-button {
+    background-color: #f41952;
+    color: white;
+    /* padding: 5px; */
+    font-size: 1.1rem;
+    font-weight: 600;
+    height: 47px;
+    width: 30%;
+}
+
+#walk-up-trip-code-button:disabled {
+    opacity: 0.5;
+}
+
+#walk-up-trip-code-button-content-container {
+    display: flex;
+    padding-top: 2.5px;
+    padding-bottom: 2.5px;
+}
+
+#walk-up-trip-code-button-content {
+    display: flex;
+    flex-direction: column;
+    font-size: 0.7rem;
+    border-right: 1px solid gray;
+    padding-right: 5px;
+}
+
+#walk-up-trip-code-button-content>div {
+    /* line-height: 20px; */
+    line-height: 1rem;
+}
+
+#directions-walk-icon-container {
+    display: flex;
+    align-items: center;
+    /* margin-left: 5px; */
+}
+
+#directions-walk-icon {
+    /* font-size: 25px;
+    height: 25px;
+    width: 25px; */
+    font-size: 1.5rem;
+    height: 1.5rem;
+    width: 1.5rem;
+    /* border-left: 1px solid gray; */
+}
+
+/* #walk-up-trip-code-button:disabled {
+    opacity: 0.5;
+} */
+
+/* @media screen and (max-width: 900px) {
+    #ride-details-container {
+        width: 100%;
+        margin: 0 auto;
+        position: initial;
+        min-height: 100vh;
+    }
+
+    #ride-details {
+        width: 85%; margin: 0 auto
+    }
+
+    .time-form-field {
+        width: 10%;
+    }
+    #create-trip-buttons {
+        margin-top: 40px;
+    }
+    
+
+}
+
+@media screen and (max-width: 450px) {
+    #ride-details-container {
+        width: 100%;
+        margin: 0 auto;
+        position: initial;
+        min-height: 100vh;
+        z-index: 9999;
+    }
+
+    .time-form-field {
+        width: 15%;
+    }
+    #create-trip-buttons {
+        margin-top: 40px;
+    }
+} */
+
+/* @media screen and (max-width: 1150px) and (min-width: 700px) {
+    #ride-details-container {
+        font-size: 0.8rem;
+    }
+
+    #change-pickup-button {
+        font-size: 0.8rem;
+    }
+
+    #cash-icon {
+        height: 0.8rem;
+    }
+}
+
+@media screen and (max-width: 700px) {
+    #ride-details-container {
+        width: 100%;
+        margin: 0 auto;
+        position: initial;
+        top: 0;
+        left: 0;
+        z-index: 9999;
+        font-size: 1rem;
+    }
+
+    #ride-details {
+        width: 85%;
+        margin: 0 auto;
+    }
+
+    .time-form-field {
+        width: 15%;
+    }
+} */
+
+/* @media screen and (max-width: 1150px) {
+    #ride-details-container {
+        font-size: 0.8rem;
+    }
+
+    #change-pickup-button {
+        font-size: 0.8rem;
+    }
+
+    #cash-icon {
+        height: 0.8rem;
+    }
+}
+
+@media screen and (max-width: 900px) {
+    #ride-details-container {
+        width: 100%;
+        margin: 0 auto;
+        position: initial;
+        top: 0;
+        left: 0;
+        z-index: 9999;
+        font-size: 1rem;
+    }
+
+    #ride-details {
+        width: 85%;
+        margin: 0 auto;
+    }
+
+    .time-form-field {
+        width: 15%;
+    }
+} */
+
+@media screen and (min-width: 1200px) {
+    #ride-details-container {
+        font-size: 0.8rem;
+        /* background-color: black; */
+    }
+
+    #change-pickup-button {
+        font-size: 16px;
+    }
+
+    /* #cash-icon {
+        height: 0.8rem;
+    } */
+}
+
+@media screen and (max-width: 1060px) {
+    #ride-details-container {
+        /* width: 35%; */
+        /* ABS */
+        /* background-color: green; */
+    }
+
+    #ride-details {
+        /* width: 90%; */
+        font-size: 16px;
+    }
+}
+
+@media screen and (max-width: 900px) {
+    #request-ride-button {
+        /* removed two lines ABS */
+        /* width: 65%;
+        margin-right: 5px; */
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .swipe-up {
+        /* changed absolute to fixed by ASE */
+        /* top: 0; */
+        bottom: 0;
+        height: 100vh;
+        position: fixed;
+        transition: top 100ms cubic-bezier(0.1, 0.615, 0.15, 1);
+        /* margin-top: -350px !important; */
+        transform: translate3d(0px, -350px, 0px);
+        top: 350px !important;
+    }
+
+    .swipe-down {
+        position: absolute !important;
+        top: 350px !important;
+        transition: top 100ms cubic-bezier(0.1, 0.615, 0.15, 1);
+
+        /* position: fixed;
+        height: 100vh; */
+        /* transform: translate3d(0px, -350px, 0px); */
+    }
+
+    #ride-details-container {
+        top: 0vh;
+        width: 100%;
+        margin: 0 auto;
+        /* position: initial;
+        top: 0; */
+        left: 0;
+        z-index: 9999;
+        font-size: 1rem;
+        border-radius: unset;
+        /* background-color: blue; */
+        /* height: 100% !important; */
+        /* ABS */
+        max-height: none;
+        /* ABS */
+    }
+
+    /* #ride-details {
+        width: 85%;
+        margin: 0 auto;
+    } */
+
+    .time-form-field {
+        width: 15%;
+    }
+
+    #create-trip-buttons {
+        /* margin-bottom: 160px; */
+        /* margin-bottom: 225px; */
+        /* margin-bottom: 75px; */
+        width: 100%;
+        /* margin-bottom: 800px; */
+    }
+
+    #create-trip-buttons button {
+        font-size: 0.85rem !important;
+    }
+
+    #request-ride-button.schedule-ride .schedule-button-date {
+        font-size: 0.8rem !important;
+    }
+}
+
+@media screen and (max-width: 600px) {
+
+    #walk-up-trip-code-button {
+        width: 35%;
+    }
+
+    #request-ride-button {
+        width: 50%;
+    }
+
+    /* #ride-details-container {
+        background-color: purple;
+    } */
+    /* #ride-details {
+        width: 90%;
+        font-size: 16px;
+    } */
+}
+
+
+@media screen and (max-width: 376px) {
+    #create-trip-buttons {
+        /* display: flex; */
+        /* flex-direction: column-reverse; */
+    }
+
+    #walk-up-trip-code-button {
+        width: 37%;
+        font-size: 0.95rem;
+    }
+
+    #request-ride-button {
+        /* margin-top: 10px; */
+        font-size: 0.95rem;
+    }
+    .mobile-smail{
+        height: 36vh!important;
+    }
+}
+
+.pickupnow-content {
+    display: flex;
+    margin-top: 30px;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.returndatepicker {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 131px;
+    height: 37px;
+    border: 1px solid #919191;
+    border-radius: 5px;
+    transition: border-color 0.3s ease-out 0.2s;
+    cursor: pointer;
+    position: relative;
+}
+
+.returndatepicker input {
+    /* display: none; */
+    font-size: 16px;
+}
+
+.returndatepicker:focus {
+    border-color: white;
+}
+
+.returndatepicker mat-icon {
+    font-size: 16px;
+}
+
+.time-form-field {
+    margin: auto 5px;
+    width: 36px;
+    height: 37px;
+    border: 1px solid #919191;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    transition: border-color 0.3s ease-out 0.2s;
+}
+
+.double-point {
+    text-align: center;
+    display: flex;
+    align-items: center;
+}
+
+.btn-change-period {
+    font-size: 18px;
+    /* margin: auto 5px; */
+    width: 38px;
+    height: 39px;
+    border: 1px solid #919191;
+    border-radius: 5px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+    color: white;
+    transition: border-color 0.3s ease-out 0.2s;
+    cursor: pointer;
+}
+
+.isCashStyle {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column
+}

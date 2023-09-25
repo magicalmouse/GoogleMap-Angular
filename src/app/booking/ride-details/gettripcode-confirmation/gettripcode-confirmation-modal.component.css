@@ -1,0 +1,12 @@
+h3 {
+    text-decoration: underline;
+}
+
+.action-buttons {
+    justify-content: space-around;
+    /* margin-top: 30%; */
+}
+
+.action-buttons button {
+    width: 100%;
+}
